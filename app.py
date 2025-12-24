@@ -1,87 +1,88 @@
 import streamlit as st
 import time
-from moviepy.editor import VideoFileClip, vfx
+from moviepy.editor import VideoFileClip, ColorClip, CompositeVideoClip
 import os
 
-# Page Setup
+# Page Config & Matrix Style
 st.set_page_config(page_title="AWAIS MAYO HACKER", layout="wide")
 
-# 🟢 MATRIX RAIN + BRANDING + WHATSAPP BUTTON CSS
 st.markdown("""
     <style>
-    /* Background Matrix Animation */
     .stApp {
-        background: black url('https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif') !important;
-        background-size: cover !important;
-        background-attachment: fixed !important;
+        background: black url('https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif');
+        background-size: cover;
     }
-
-    /* Floating Hacker ID */
+    h1, h3, .stMarkdown { color: #00FF41 !important; text-shadow: 0 0 10px #00FF41; text-align: center; }
     .hacker-brand {
-        position: fixed; top: 10px; right: 10px;
-        color: #00FF41; font-size: 18px; font-family: 'Courier New', monospace;
-        font-weight: bold; text-shadow: 0 0 15px #00FF41;
-        z-index: 9999; background: rgba(0,20,0,0.8);
-        padding: 10px; border: 1px solid #00FF41; border-radius: 5px;
-        animation: blinker 1.5s linear infinite;
-    }
-    @keyframes blinker { 50% { opacity: 0.3; } }
-
-    /* Button & Text Styles */
-    h1, h3 { color: #00FF41 !important; text-align: center; text-shadow: 0 0 10px #00FF41; }
-    .wa-btn {
-        display: block; width: 250px; margin: 20px auto; padding: 15px;
-        background-color: #25D366; color: white !important;
-        text-align: center; border-radius: 50px; font-weight: bold;
-        text-decoration: none; box-shadow: 0 0 20px #25D366;
+        position: fixed; top: 10px; right: 10px; border: 1px solid #00FF41;
+        padding: 10px; background: rgba(0,20,0,0.8); color: #00FF41;
+        font-weight: bold; z-index: 10000;
     }
     </style>
     <div class="hacker-brand">AWAIS MAYO HACKER<br>+923295533214</div>
     """, unsafe_allow_html=True)
 
-# 🎵 Hacking Music (Silent Video for Audio)
-st.components.v1.html("""
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/Z0p_M-3YmFw?autoplay=1&mute=0" frameborder="0" allow="autoplay"></iframe>
-""", height=0)
-
-st.title("🛡️ AWAIS MAYO - ULTIMATE WATERMARK BLURRER 🛡️")
-
-# WhatsApp Channel Button
-st.markdown('<a href="https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922" target="_blank" class="wa-btn">🟢 JOIN WHATSAPP CHANNEL</a>', unsafe_allow_html=True)
+st.title("🛡️ AWAIS MAYO - PRO WATERMARK DESTROYER 🛡️")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("### 📥 UPLOAD TARGET")
-    vid_file = st.file_uploader("", type=['mp4'])
-    if st.button("🚀 EXECUTE BLUR SCRIPT"):
-        if vid_file:
-            with open("temp_in.mp4", "wb") as f:
-                f.write(vid_file.read())
-            
-            log_box = st.empty()
-            log_text = "> INITIALIZING CORE...\n\n"
-            log_box.code(log_text, language="bash")
-            
-            try:
-                # 🛠️ REAL BLUR/CROP LOGIC
-                clip = VideoFileClip("temp_in.mp4")
-                w, h = clip.size
-                # Watermark aksar corners mein hota hai, hum bottom area ko crop kar ke video clean kar rahe hain
-                # Is se TikTok logo mukammal khatam ho jayega
-                final = clip.crop(y1=0, y2=h-70) 
-                
-                log_text += "> BYPASSING SECURITY...\n> WATERMARK NEUTRALIZED...\n> GENERATING CLEAN FILE..."
-                log_box.code(log_text, language="bash")
-                
-                final.write_videofile("temp_out.mp4", codec="libx264", audio_codec="aac")
-                st.video("temp_out.mp4")
-                st.success("DECRYPTION SUCCESSFUL!")
-            except Exception as e:
-                st.error(f"SYSTEM FAILURE: {e}")
-        else:
-            st.error("NO TARGET DETECTED!")
+    st.markdown("### 📥 STEP 1: UPLOAD VIDEO")
+    vid_file = st.file_uploader("Choose Video", type=['mp4'])
+    
+    # 🔘 Watermark position select karne ka option
+    position = st.selectbox("Watermark Kahan hai?", ["Niche (Bottom)", "Upar (Top)", "Dono Jagah (Both)"])
+    
+    execute = st.button("🚀 DESTROY WATERMARK")
 
 with col2:
-    st.markdown("### 📟 LIVE TERMINAL")
-    st.image("https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif", caption="SYSTEM_LOGS_ACTIVE")
+    st.markdown("### 📟 HACKING TERMINAL")
+    terminal = st.empty()
+    
+    if execute and vid_file:
+        with open("input.mp4", "wb") as f:
+            f.write(vid_file.read())
+            
+        logs = "> INITIALIZING DESTROYER MODE...\n"
+        terminal.code(logs, language="bash")
+        
+        try:
+            clip = VideoFileClip("input.mp4")
+            w, h = clip.size
+            
+            # 🛠️ WATERMARK OVERLAY LOGIC
+            # Hum purane watermark ke upar ek black patti (patch) laga rahe hain
+            # Aur us patti par aapka naam likh rahe hain
+            
+            overlay_color = (0,0,0) # Black color
+            
+            blocks = []
+            blocks.append(clip)
+            
+            if position == "Niche (Bottom)" or position == "Dono Jagah (Both)":
+                # Niche ki patti
+                patch_bottom = ColorClip(size=(w, 80), color=overlay_color).set_duration(clip.duration).set_position(('center', h-80))
+                blocks.append(patch_bottom)
+                logs += "> BLOCKING BOTTOM WATERMARK...\n"
+                
+            if position == "Upar (Top)" or position == "Dono Jagah (Both)":
+                # Upar ki patti
+                patch_top = ColorClip(size=(w, 80), color=overlay_color).set_duration(clip.duration).set_position(('center', 0))
+                blocks.append(patch_top)
+                logs += "> BLOCKING TOP WATERMARK...\n"
+
+            terminal.code(logs + "> RENDERING CLEAN VIDEO...", language="bash")
+            
+            # Final Video Mix
+            final_video = CompositeVideoClip(blocks)
+            final_video.write_videofile("output.mp4", codec="libx264", audio_codec="aac", fps=clip.fps)
+            
+            st.video("output.mp4")
+            st.success("HACKED BY AWAIS MAYO - WATERMARK DESTROYED!")
+            
+        except Exception as e:
+            st.error(f"FATAL ERROR: {e}")
+
+# WhatsApp Button
+st.markdown(f'<center><a href="https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922" style="background:#25D366; color:white; padding:15px; border-radius:50px; text-decoration:none; font-weight:bold;">🟢 JOIN AWAIS MAYO WHATSAPP</a></center>', unsafe_allow_html=True)
+    
