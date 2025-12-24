@@ -6,110 +6,82 @@ import os
 # Page Setup
 st.set_page_config(page_title="AWAIS MAYO HACKER", layout="wide")
 
-# 🟢 ULTRA HACKING CSS (Matrix Rain + Branding + Blur)
+# 🟢 MATRIX RAIN + BRANDING + WHATSAPP BUTTON CSS
 st.markdown("""
     <style>
-    /* Full Screen Matrix Animation */
+    /* Background Matrix Animation */
     .stApp {
-        background: black url('https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif');
-        background-size: cover;
-        background-attachment: fixed;
+        background: black url('https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif') !important;
+        background-size: cover !important;
+        background-attachment: fixed !important;
     }
 
-    /* Floating Hacker Identity */
+    /* Floating Hacker ID */
     .hacker-brand {
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #00FF41;
-        font-size: 20px;
-        font-family: 'Courier New', monospace;
-        font-weight: bold;
-        text-shadow: 0 0 20px #00FF41;
-        z-index: 9999;
-        background: rgba(0,0,0,0.7);
-        padding: 10px;
-        border: 1px solid #00FF41;
-        border-radius: 10px;
+        position: fixed; top: 10px; right: 10px;
+        color: #00FF41; font-size: 18px; font-family: 'Courier New', monospace;
+        font-weight: bold; text-shadow: 0 0 15px #00FF41;
+        z-index: 9999; background: rgba(0,20,0,0.8);
+        padding: 10px; border: 1px solid #00FF41; border-radius: 5px;
+        animation: blinker 1.5s linear infinite;
     }
+    @keyframes blinker { 50% { opacity: 0.3; } }
 
-    /* WhatsApp Button Styling */
-    .wa-btn {
-        display: inline-block;
-        padding: 15px 30px;
-        background-color: #25D366;
-        color: white !important;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        box-shadow: 0 0 20px #25D366;
-        margin-top: 20px;
-        transition: 0.3s;
-    }
-    .wa-btn:hover { transform: scale(1.1); box-shadow: 0 0 40px #25D366; }
-
-    /* Terminal Styles */
+    /* Button & Text Styles */
     h1, h3 { color: #00FF41 !important; text-align: center; text-shadow: 0 0 10px #00FF41; }
-    .stButton>button {
-        background: transparent !important;
-        color: #00FF41 !important;
-        border: 2px solid #00FF41 !important;
-        box-shadow: 0 0 15px #00FF41;
-        font-size: 20px;
-        width: 100%;
+    .wa-btn {
+        display: block; width: 250px; margin: 20px auto; padding: 15px;
+        background-color: #25D366; color: white !important;
+        text-align: center; border-radius: 50px; font-weight: bold;
+        text-decoration: none; box-shadow: 0 0 20px #25D366;
     }
     </style>
-
-    <div class="hacker-brand">
-        AWAIS MAYO HACKER | +923295533214
-    </div>
+    <div class="hacker-brand">AWAIS MAYO HACKER<br>+923295533214</div>
     """, unsafe_allow_html=True)
 
-# 🎵 Background Hacking Music
+# 🎵 Hacking Music (Silent Video for Audio)
 st.components.v1.html("""
-    <iframe src="https://www.youtube.com/embed/Z_8G0zHMAS8?autoplay=1&mute=0" width="0" height="0" frameborder="0"></iframe>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/Z0p_M-3YmFw?autoplay=1&mute=0" frameborder="0" allow="autoplay"></iframe>
 """, height=0)
 
-st.title("💀 AWAIS MAYO - ULTIMATE WATERMARK BLURRER 💀")
+st.title("🛡️ AWAIS MAYO - ULTIMATE WATERMARK BLURRER 🛡️")
+
+# WhatsApp Channel Button
+st.markdown('<a href="https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922" target="_blank" class="wa-btn">🟢 JOIN WHATSAPP CHANNEL</a>', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("### 📥 INJECT TARGET")
-    vid_file = st.file_uploader("Upload Video", type=['mp4'])
+    st.markdown("### 📥 UPLOAD TARGET")
+    vid_file = st.file_uploader("", type=['mp4'])
     if st.button("🚀 EXECUTE BLUR SCRIPT"):
         if vid_file:
             with open("temp_in.mp4", "wb") as f:
                 f.write(vid_file.read())
             
-            with st.spinner(""):
-                t = st.empty()
-                log = ""
-                for msg in ["> ACCESSING CORE...", "> TARGET: " + vid_file.name, "> BLURRING WATERMARK...", "> AUTHORIZING 923295533214...", "> SUCCESS!"]:
-                    log += msg + "\n\n"
-                    t.code(log, language="bash")
-                    time.sleep(1)
-                
+            log_box = st.empty()
+            log_text = "> INITIALIZING CORE...\n\n"
+            log_box.code(log_text, language="bash")
+            
+            try:
                 # 🛠️ REAL BLUR/CROP LOGIC
                 clip = VideoFileClip("temp_in.mp4")
-                # Watermark aksar corners pe hota hai, hum bottom 10% blur/crop kar rahe hain
                 w, h = clip.size
-                final = clip.crop(y1=0, y2=h-60) # Standard TikTok WM removal
-                final.write_videofile("temp_out.mp4", codec="libx264")
+                # Watermark aksar corners mein hota hai, hum bottom area ko crop kar ke video clean kar rahe hain
+                # Is se TikTok logo mukammal khatam ho jayega
+                final = clip.crop(y1=0, y2=h-70) 
                 
+                log_text += "> BYPASSING SECURITY...\n> WATERMARK NEUTRALIZED...\n> GENERATING CLEAN FILE..."
+                log_box.code(log_text, language="bash")
+                
+                final.write_videofile("temp_out.mp4", codec="libx264", audio_codec="aac")
                 st.video("temp_out.mp4")
-                st.success("CLEANED BY AWAIS MAYO HACKER")
+                st.success("DECRYPTION SUCCESSFUL!")
+            except Exception as e:
+                st.error(f"SYSTEM FAILURE: {e}")
         else:
-            st.error("NO FILE DETECTED!")
+            st.error("NO TARGET DETECTED!")
 
 with col2:
-    st.markdown("### 📢 CONNECT WITH ME")
-    st.write("Join my WhatsApp Channel for latest hacks and updates!")
-    st.markdown("""
-        <a href="https://whatsapp.com/channel/0029VbBzlMlIt5rzSeMBE922" target="_blank" class="wa-btn">
-            🟢 JOIN WHATSAPP CHANNEL
-        </a>
-    """, unsafe_allow_html=True)
-    st.image("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueW9ueXp0bm9ueXp0bm9ueXp0bm9ueXp0bm9ueXp0JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/o0vwzuFwCGAFO/giphy.gif")
-
+    st.markdown("### 📟 LIVE TERMINAL")
+    st.image("https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif", caption="SYSTEM_LOGS_ACTIVE")
