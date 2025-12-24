@@ -1,64 +1,55 @@
-import gradio as gr
+import streamlit as st
 import time
 
-# Ultra-Dark Hacking CSS
-css = """
-body { 
-    background-color: #000b00; 
-    color: #00ff41; 
-    font-family: 'Courier New', monospace;
-}
-.gradio-container {
-    border: 3px solid #00ff41 !important;
-    background: rgba(0, 20, 0, 0.9);
-    box-shadow: 0 0 30px #00ff41;
-}
-input, button, .output-video {
-    border: 1px solid #00ff41 !important;
-    background-color: #051a05 !important;
-    color: #00ff41 !important;
-}
-#title { text-align: center; text-shadow: 0 0 15px #00ff41; }
-"""
+# Page Configuration
+st.set_page_config(page_title="Awais Mayo Hacker", page_icon="💀", layout="wide")
 
-def hacking_process(video):
-    # Fake Hacking Logs for Visuals
-    logs = [
-        "> INITIALIZING SYSTEM: AWAIS MAYO HACKER...",
-        "> ACCESSING ENCRYPTED LAYERS...",
-        "> WATERMARK SIGNATURE DETECTED...",
-        "> BYPASSING SECURITY PROTOCOLS...",
-        "> DECRYPTING VIDEO FRAMES...",
-        "> SUCCESS: WATERMARK NEUTRALIZED."
-    ]
-    
-    current_log = ""
-    for log in logs:
-        current_log += log + "\n"
-        yield current_log, None  # Sirf logs dikhaye ga pehle
-        time.sleep(0.8)
-    
-    # Final Output
-    yield current_log, video
+# Dark Hacking Styling
+st.markdown("""
+    <style>
+    .main { background-color: #000000; }
+    h1, h3, p, span { color: #00FF41 !important; font-family: 'Courier New', monospace !important; }
+    .stButton>button {
+        background-color: #051a05;
+        color: #00FF41;
+        border: 2px solid #00FF41;
+        box-shadow: 0 0 10px #00FF41;
+        width: 100%;
+    }
+    .stTextInput>div>div>input { background-color: #051a05; color: #00FF41; }
+    </style>
+    """, unsafe_allow_html=True)
 
-with gr.Blocks(css=css) as demo:
-    gr.HTML("<h1 id='title'>🛡️ AWAIS MAYO HACKER - TERMINAL v2.0 🛡️</h1>")
+st.title("🛡️ AWAIS MAYO HACKER 🛡️")
+st.write("---")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("📁 SOURCE INPUT")
+    uploaded_file = st.file_uploader("Upload Video File", type=['mp4', 'mov', 'avi'])
+    run_btn = st.button("EXECUTE DECRYPTION SCRIPT")
+
+with col2:
+    st.subheader("🖥️ SYSTEM LOGS")
+    log_area = st.empty()
     
-    with gr.Row():
-        with gr.Column():
-            input_vid = gr.Video(label="SOURCE_FILE.mp4")
-            start_btn = gr.Button("RUN HACKING SCRIPT")
+    if run_btn and uploaded_file:
+        logs = [
+            "> [SYSTEM]: AWAIS MAYO HACKER INITIALIZING...",
+            "> [ACCESS]: BYPASSING SECURITY FILTERS...",
+            "> [TARGET]: DETECTING WATERMARK SIGNATURE...",
+            "> [PROCESS]: REMOVING UNWANTED METADATA...",
+            "> [STATUS]: DECRYPTION 100% COMPLETE."
+        ]
         
-        with gr.Column():
-            log_output = gr.Textbox(label="SYSTEM_LOGS", lines=10, interactive=False)
-            output_vid = gr.Video(label="DECRYPTED_OUTPUT.mp4")
-
-    start_btn.click(
-        hacking_process, 
-        inputs=input_vid, 
-        outputs=[log_output, output_vid]
-    )
-
-if __name__ == "__main__":
-    demo.launch()
-      
+        current_logs = ""
+        for log in logs:
+            current_logs += log + "\n\n"
+            log_area.code(current_logs, language="bash")
+            time.sleep(1)
+        
+        st.success("CLEANED FILE GENERATED SUCCESSFULLY")
+        st.video(uploaded_file)
+    elif run_btn:
+        st.error("ERROR: NO SOURCE FILE DETECTED!")
