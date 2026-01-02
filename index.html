@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AH Web Development Studio</title>
+    <title>AH Web Studio | Professional</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="loader">
-        <div class="space">
-            <div class="orbit">
-                <div class="satellite"></div>
+        <div class="loader-content">
+            <div class="galaxy">
+                <div class="orbit">
+                    <div class="satellite"></div>
+                </div>
             </div>
-            <h1 class="loader-text">Welcome To Our <br> <span>WEB DEVELOPMENT STUDIO</span></h1>
+            <h1 class="welcome-msg">Welcome To Our <br> <span>WEB DEVELOPMENT STUDIO</span></h1>
         </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+        <nav class="side-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Our Work</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </div>
 
     <header>
@@ -31,10 +43,10 @@
 
             <div class="right-nav">
                 <div class="search-container">
-                    <input type="text" placeholder="Search project...">
+                    <input type="text" placeholder="Search...">
                     <span class="search-icon">🔍</span>
                 </div>
-                <div class="menu-btn">
+                <div class="menu-btn" onclick="toggleMenu()">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -43,31 +55,20 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>We Build <span class="gradient-text">Digital Futures</span></h2>
-            <p>High-end websites for high-end clients. Let's create something extraordinary.</p>
-            <button class="cta-btn">Start A Project</button>
-        </div>
-        
-        <div class="animation-box">
-            <div class="float-circle one"></div>
-            <div class="float-circle two"></div>
-            <div class="float-card">
-                <code>&lt;coding /&gt;</code>
-            </div>
-        </div>
-    </section>
-
     <script>
-        // Loader script
+        // Loader Control
         window.addEventListener('load', () => {
             setTimeout(() => {
-                const loader = document.getElementById('loader');
-                loader.style.opacity = '0';
-                setTimeout(() => { loader.style.display = 'none'; }, 500);
-            }, 3500); // 3.5 seconds for animation
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 800);
+            }, 4000); 
         });
+
+        // Sidebar Toggle Function
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
