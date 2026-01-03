@@ -3,93 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AH Web Studio | Pro Portfolio</title>
+    <title>AH PREMIUM STUDIO | INNOVATION</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syncopate:wght@400;700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="loader">
-        <div class="loader-content">
-            <div class="orbit"><div class="satellite"></div></div>
-            <h1 class="welcome-msg">Welcome To Our <br> <span>WEB DEVELOPMENT STUDIO</span></h1>
+        <div class="loader-wrap">
+            <div class="scanner"></div>
+            <div class="circle-box">
+                <div class="main-circle"></div>
+                <div class="sub-circle"></div>
+            </div>
+            <h1 class="load-text">INITIALIZING <span>AH STUDIO</span></h1>
+            <p class="tagline">Welcome To Our Web Development World</p>
         </div>
     </div>
 
     <header>
         <div class="nav-container">
             <div class="logo-box">
-                <div class="logo-icon">AH</div>
-                <div class="logo-text">
-                    <span class="web">WEB</span>
-                    <span class="dev">Development</span>
-                    <span class="studio">Studio</span>
+                <div class="logo-main">AH</div>
+                <div class="brand-info">
+                    <span class="brand-top">WEB</span>
+                    <span class="brand-mid">DEVELOPMENT</span>
+                    <span class="brand-bot">STUDIO</span>
                 </div>
             </div>
-            <div class="right-nav">
-                <div class="search-box"><input type="text" placeholder="Search..."><span>🔍</span></div>
-                <div class="menu-icon"><span></span><span></span><span></span></div>
+            <div class="nav-links">
+                <div class="search-wrap">
+                    <input type="text" placeholder="Explore Technologies...">
+                    <span class="search-btn">🔍</span>
+                </div>
+                <div class="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="main-visual">
-        <div class="visual-container">
-            <div class="laptop-screen">
-                <img src="Coding 1.jpg" alt="Coding Background">
-                <div class="overlay-text">
-                    <h2>اسٹ ویب ڈویلپمنٹ</h2>
-                    <h1>سادگی میں کمال ہے</h1>
-                    <p>Our studio provides both high-end Coding and flexible WordPress solutions.</p>
-                    <button class="hero-btn">شروع کریں</button>
+    <section class="hero-section">
+        <div class="hero-inner">
+            <div class="laptop-frame">
+                <img src="Coding 1.jpg" alt="Dev Environment">
+                <div class="screen-overlay">
+                    <h3 class="top-tag">ESTD 2026</h3>
+                    <h1 class="main-title">ELITE WEB SOLUTIONS</h1>
+                    <h2 class="sub-title">SIMPLICITY IS THE ULTIMATE SOPHISTICATION</h2>
+                    <p class="hero-p">High-end Coding & Premium WordPress Architectures</p>
+                    <button class="prime-btn">GET STARTED</button>
                 </div>
             </div>
 
-            <div class="skill-icons">
-                <div class="icon-item">
-                    <div class="circle">H</div>
-                    <span>HTML</span>
+            <div class="tech-icons">
+                <div class="t-item">
+                    <div class="t-circle">H</div>
+                    <p>HTML5</p>
                 </div>
-                <div class="icon-item">
-                    <div class="circle">@</div>
-                    <span>CSS</span>
+                <div class="t-item">
+                    <div class="t-circle">C</div>
+                    <p>CSS3</p>
                 </div>
-                <div class="icon-item">
-                    <div class="circle">JS</div>
-                    <span>JavaScript</span>
+                <div class="t-item">
+                    <div class="t-circle">JS</div>
+                    <p>JAVASCRIPT</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="details">
-        <div class="note-box">
-            <h3>* NOTE / نوٹ</h3>
-            <p>We highly recommend <strong>Custom Coding</strong> for top performance and security.</p>
-            <p class="urdu">ہم بہترین کارکردگی اور سیکیورٹی کے لیے کسٹم کوڈنگ کی سفارش کرتے ہیں۔</p>
-        </div>
-
-        <div class="comparison-grid">
-            <div class="comp-card">
-                <img src="Coding 2.png" alt="Coding">
-                <h4>CUSTOM CODING</h4>
-                <p class="urdu">مکمل کنٹرول اور کمال کی رفتار۔</p>
-            </div>
-            <div class="vs">VS</div>
-            <div class="comp-card">
-                <img src="Wordpress 1.jpg" alt="WordPress">
-                <h4>WORDPRESS</h4>
-                <p class="urdu">آسان مینیجمنٹ اور فوری حل۔</p>
-            </div>
+    <section class="note-section">
+        <div class="note-container">
+            <div class="note-tag">* OFFICIAL NOTE</div>
+            <p>We strictly recommend <span>Custom Coding</span> for enterprise-level security and unrivaled speed. Our team ensures your digital presence is built on a solid foundation of clean, high-performance code.</p>
         </div>
     </section>
 
     <script>
         window.addEventListener('load', () => {
             setTimeout(() => {
-                document.getElementById('loader').style.opacity = '0';
-                setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 600);
-            }, 3000);
+                document.getElementById('loader').style.transform = 'translateY(-100%)';
+            }, 3500);
         });
     </script>
 </body>
