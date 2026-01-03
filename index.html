@@ -3,38 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AH PREMIUM WEB STUDIO</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Professional Dark Website</title>
+
+<style>
+/* ===== BASIC RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #081a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ===== BLUR GREEN BACKGROUND ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top,
+    rgba(0,255,0,0.12),
+    rgba(0,0,0,0.95)
+  );
+  backdrop-filter: blur(6px);
+  z-index: -2;
+}
+
+/* ===== HACKING CODE RAIN ===== */
+.rain {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,0,0.12),
+    rgba(0,255,0,0.12) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  animation: rainMove 6s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes rainMove {
+  from { background-position: 0 -100%; }
+  to { background-position: 0 100%; }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+header h1 {
+  color: #00ff66;
+  font-size: 24px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+nav a:hover {
+  color: #00ff66;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #00ff66;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: none;
+  background: #00ff66;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero button:hover {
+  background: #00cc55;
+}
+
+/* ===== SECTION ===== */
+section {
+  padding: 70px 20px;
+}
+
+section h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #00ff66;
+}
+
+section p {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid rgba(0,255,0,0.2);
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ===== MUSIC BUTTON ===== */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00ff66;
+  color: #000;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 30px;
+  }
+  nav a {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<!-- BACKGROUND AUTO CODING -->
-<div class="code-bg">
-<pre><code>
-const studio = "AH WEB STUDIO";
-function hackFuture(){
-    return "Clean Code • Modern Design • Secure";
-}
-while(true){
-    hackFuture();
-}
-</code></pre>
+<div class="rain"></div>
+
+<header class="container">
+  <h1>YOUR LOGO</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="hero container">
+  <h2>Welcome To Professional Website</h2>
+  <p>Dark Green Hacking Style – Clean & Smooth Design</p>
+  <button>Get Started</button>
 </div>
 
-<!-- LOADER / HACKING TYPE ANIMATION -->
-<div id="loader">
-    <div class="loader-content">
-        <h1 class="welcome-msg">WELCOME TO <br> <span>AH WEB STUDIO</span></h1>
-        <div class="hacker-text">LOADING SYSTEM 0%</div>
-    </div>
-</div>
+<section>
+  <h3>About Us</h3>
+  <p>
+    This is a clean professional website with dark green hacking style
+    background, smooth animations and responsive design.
+  </p>
+</section>
 
-<header>
-    <div class="nav-container">
-        <div class="logo-box">
-            <div class="logo-icon">AH</div>
-            <div class="logo-text">
+<section>
+  <h3>Our Services</h3>
+  <p>
+    Web Development • Security • Automation • Professional Solutions
+  </p>
+</section>
+
+<footer>
+  © 2026 Your Website | All Rights Reserved
+</footer>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<script>
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+</script>
+
+</body>
+                                                         </html>            <div class="logo-text">
                 <span class="web">WEB</span>
                 <span class="dev">Development</span>
                 <span class="studio">Studio</span>
