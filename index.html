@@ -1,75 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AH Web Studio | Professional</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <div id="loader">
-        <div class="loader-content">
-            <div class="galaxy">
-                <div class="orbit">
-                    <div class="satellite"></div>
+    <section class="services-table-section">
+        <h2 class="main-heading">Choose Your Technology Path</h2>
+        <div class="table-container">
+            
+            <div class="table-card coding-card">
+                <div class="card-image-box">
+                    <img src="Coding 1.jpg" class="img-front" alt="Coding Professional">
+                    <img src="Coding 2.png" class="img-back" alt="Coding Team">
+                    <div class="tech-tag">HIGH LEVEL</div>
+                </div>
+                <div class="card-content">
+                    <h3>CUSTOM CODING</h3>
+                    <div class="typing-container">
+                        <p class="eng-typing">Scalable, Secure & Fast</p>
+                    </div>
+                    <hr>
+                    <p class="urdu-text">ہم آپ کے لیے شروع سے (Scratch) مکمل کوڈنگ کے ذریعے ایسی ویب سائٹ بناتے ہیں جو ہیکرز سے محفوظ اور رفتار میں تیز ترین ہوتی ہے۔</p>
+                    <ul class="features">
+                        <li>✔ HTML5 / CSS3 / JS</li>
+                        <li>✔ React & Node Expertise</li>
+                        <li>✔ 100% Unique Design</li>
+                    </ul>
                 </div>
             </div>
-            <h1 class="welcome-msg">Welcome To Our <br> <span>WEB DEVELOPMENT STUDIO</span></h1>
+
+            <div class="vs-circle">VS</div>
+
+            <div class="table-card wp-card">
+                <div class="card-image-box">
+                    <img src="Wordpress 1.jpg" class="img-front" alt="Wordpress Dev">
+                    <img src="Wordpress 2.png" class="img-back" alt="Wordpress Work">
+                    <div class="tech-tag wp-tag">FLEXIBLE</div>
+                </div>
+                <div class="card-content">
+                    <h3>WORDPRESS CMS</h3>
+                    <div class="typing-container">
+                        <p class="eng-typing">Easy to Manage & Fast Delivery</p>
+                    </div>
+                    <hr>
+                    <p class="urdu-text">اگر آپ کو جلدی اور آسانی سے مینیج ہونے والی ویب سائٹ چاہیے، تو ہم ورڈپریس پر کمال کے ڈیزائن بنا کر دیتے ہیں۔</p>
+                    <ul class="features">
+                        <li>✔ Elementor Pro</li>
+                        <li>✔ E-commerce Stores</li>
+                        <li>✔ Easy Admin Panel</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-    </div>
-
-    <div id="sidebar" class="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">×</button>
-        <nav class="side-nav">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio.html">Our Work</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </div>
-
-    <header>
-        <div class="nav-container">
-            <div class="logo-box">
-                <div class="logo-icon">AH</div>
-                <div class="logo-text">
-                    <span class="web">WEB</span>
-                    <span class="dev">Development</span>
-                    <span class="studio">Studio</span>
-                </div>
-            </div>
-
-            <div class="right-nav">
-                <div class="search-container">
-                    <input type="text" placeholder="Search...">
-                    <span class="search-icon">🔍</span>
-                </div>
-                <div class="menu-btn" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <script>
-        // Loader Control
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').style.opacity = '0';
-                setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 800);
-            }, 4000); 
-        });
-
-        // Sidebar Toggle Function
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
+    </section>
 
