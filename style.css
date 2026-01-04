@@ -295,4 +295,22 @@ body {
     padding: 0;
     overflow-x: hidden;
                }
-              
+              /* --- Positioning Logo Image next to AH Text --- */
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Space between logo and text */
+}
+
+.header-logo-img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.5));
+}
+
+.logo-icon {
+    border-right: 2px solid #222;
+    padding-right: 10px;
+    margin-right: 0; /* Removing extra margin */
+  }
+  
