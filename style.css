@@ -296,20 +296,20 @@ body {
     overflow-x: hidden;
                }
               /* --- Positioning Logo Image next to AH Text --- */
+/* --- Final Logo & Glow Styling --- */
 .logo-box {
     display: flex;
-    align-items: center;
-    gap: 12px; /* Space between logo and text */
+    align-items: center; /* This keeps logo and text in one line */
+    gap: 15px; /* Space between logo and text */
 }
 
-/* --- Enhanced Logo Branding --- */
 .header-logo-img {
-    width: 80px; /* Increased size from 40px to 80px to make it stand out */
+    width: 110px; /* Logo size increased as you wanted */
     height: auto;
-    filter: drop-shadow(0 0 12px rgba(0, 242, 255, 0.8)); /* Stronger Neon Glow */
-    transition: transform 0.3s ease-in-out;
-    margin-right: 5px; /* Added slight gap from the AH text */
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.7)); /* Neon Glow effect */
+    display: block;
 }
+
 
 /* Adds a nice zoom effect when you hover over the logo */
 .header-logo-img:hover {
