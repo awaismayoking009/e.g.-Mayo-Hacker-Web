@@ -302,12 +302,19 @@ body {
     gap: 12px; /* Space between logo and text */
 }
 
+/* --- Enhanced Logo Branding --- */
 .header-logo-img {
-    width: 40px; /* Adjust size as needed */
+    width: 80px; /* Increased size from 40px to 80px to make it stand out */
     height: auto;
-    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.5));
+    filter: drop-shadow(0 0 12px rgba(0, 242, 255, 0.8)); /* Stronger Neon Glow */
+    transition: transform 0.3s ease-in-out;
+    margin-right: 5px; /* Added slight gap from the AH text */
 }
 
+/* Adds a nice zoom effect when you hover over the logo */
+.header-logo-img:hover {
+    transform: scale(1.15);
+}
 .logo-icon {
     border-right: 2px solid #222;
     padding-right: 10px;
