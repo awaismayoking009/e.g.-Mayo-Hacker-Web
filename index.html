@@ -262,5 +262,14 @@ window.onload = ()=>{
 };
 </script>
 
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+
+    // When user clicks the 3 lines
+    menuBtn.addEventListener('click', () => {
+        sideMenu.classList.toggle('active');
+    });
+</script>   
 </body>
           </html>
