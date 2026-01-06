@@ -419,23 +419,6 @@ body {
     text-align: center;
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.mobile-nav-toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.line {
-    width: 30px;
-    height: 3px;
-    background-color: #00f2ff;
-  }
   /* Fix for the 3-line menu button */
 .mobile-nav-toggle {
     position: fixed; /* Fixed on screen */
