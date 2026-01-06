@@ -3,72 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | AH Premium Studio</title>
+    <title>About Our Founder | AH Premium Web Studio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0a0a0a; color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .tech-font { font-family: 'Orbitron', sans-serif; }
-        .cyan-text { color: #00f2ff; }
-        .glow-box { border: 1px solid #00f2ff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2); transition: 0.3s; }
-        .glow-box:hover { box-shadow: 0 0 25px rgba(0, 242, 255, 0.5); transform: translateY(-5px); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        body { background: #050505; color: #ffffff; font-family: 'Poppins', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        .cyan-text { color: #00f2ff; text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
+        .tech-font { font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
+        .section-padding { padding: 80px 8%; }
         
-        /* Grid for Features */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 50px; }
-        .feature-card { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 15px; text-align: left; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 242, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: 0.4s;
+        }
+        .glass-card:hover { border-color: #00f2ff; transform: translateY(-5px); }
+
+        .founder-frame {
+            border: 4px solid #00f2ff;
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+            border-radius: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .highlight-box {
+            border-left: 4px solid #00f2ff;
+            padding-left: 20px;
+            background: linear-gradient(90deg, rgba(0, 242, 255, 0.05), transparent);
+            margin: 25px 0;
+        }
+
+        .badge {
+            background: #00f2ff;
+            color: #000;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <a href="index.html" style="text-decoration:none; color:#00f2ff; font-weight:bold;">← BACK TO HOME</a>
+    <header style="padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #111;">
+        <h2 class="tech-font cyan-text" style="margin:0;">AH STUDIO</h2>
+        <a href="index.html" style="text-decoration:none; color:#00f2ff; border:1px solid #00f2ff; padding:8px 20px; border-radius:5px; font-weight:bold; font-size:14px;">GO BACK</a>
+    </header>
 
-        <section style="text-align: center; margin-top: 50px;">
-            <div style="position: relative; display: inline-block;">
-                <img src="1767624417200.jpg" alt="Awais Mayo" style="width: 250px; border-radius: 50%; border: 4px solid #00f2ff; box-shadow: 0 0 30px #00f2ff;">
-                <div style="background: #00f2ff; color: black; padding: 5px 15px; border-radius: 20px; position: absolute; bottom: 10px; right: -10px; font-weight: bold; font-size: 12px;">FOUNDER</div>
+    <section class="section-padding" style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <img src="awais.jpg" alt="Awais Mayo" class="founder-frame" style="width: 320px;">
+        </div>
+        <div style="flex: 1.5; min-width: 300px;">
+            <span class="badge tech-font">THE ARCHITECT</span>
+            <h1 class="tech-font" style="font-size: 2.8rem; margin: 10px 0;">AWAIS <span class="cyan-text">MAYO</span></h1>
+            <h3 class="cyan-text" style="font-weight: 400; margin-bottom: 20px;">Founder & Lead Systems Engineer</h3>
+            <div class="highlight-box">
+                <p style="font-style: italic; color: #ccc;">
+                    "Awais Mayo is not just a developer; he is a master of digital logic. He personally engineers every project, ensuring that every line of code serves a purpose. His deep expertise in complex architecture transforms simple ideas into high-performance digital assets."
+                </p>
             </div>
-            <h1 class="tech-font cyan-text" style="font-size: 2.5rem; margin-top: 20px;">AWAIS MAYO</h1>
-            <p style="color: #bbb; max-width: 700px; margin: 0 auto;">Pioneering the next generation of web experiences through clean code and futuristic design.</p>
-        </section>
+            <p style="color: #999;">With a relentless focus on clean code and futuristic aesthetics, Awais ensures that AH Premium Studio remains at the forefront of the web development industry.</p>
+        </div>
+    </section>
 
-        <hr style="border: 0.5px solid #333; margin: 60px 0;">
-
-        <section>
-            <h2 class="tech-font cyan-text" style="text-align: center;">WHY CHOOSE OUR HAND-CODED SOLUTIONS?</h2>
-            <p style="text-align: center; color: #888;">Standard websites use templates. We build high-performance machines.</p>
-
-            <div class="features-grid">
-                <div class="feature-card glow-box">
-                    <h3 class="cyan-text tech-font">Lightning Speed</h3>
-                    <p>Template-based sites (WordPress/Wix) are heavy. Our custom coding ensures 99/100 Google PageSpeed scores, making your site load in milliseconds.</p>
-                </div>
-
-                <div class="feature-card glow-box">
-                    <h3 class="cyan-text tech-font">Military Security</h3>
-                    <p>Clean code means no hidden vulnerabilities. We write every line manually to protect your data from common cyber attacks and malware.</p>
-                </div>
-
-                <div class="feature-card glow-box">
-                    <h3 class="cyan-text tech-font">SEO Mastery</h3>
-                    <p>Our code structure is designed for search engine bots. We use semantic HTML5 that helps you rank on the first page of Google faster than competitors.</p>
-                </div>
-
-                <div class="feature-card glow-box">
-                    <h3 class="cyan-text tech-font">Scalable Design</h3>
-                    <p>As your business grows, your website should too. Our hand-coded architecture allows us to add any complex feature at any time without limits.</p>
-                </div>
+    <section class="section-padding" style="background: #080808; text-align: center;">
+        <h2 class="tech-font cyan-text">THE ELITE SUGGESTION</h2>
+        <div class="glass-card" style="max-width: 1000px; margin: 40px auto; padding: 0; overflow: hidden;">
+            <img src="Awais About1.jpg" alt="Visionary Thinking" style="width: 100%; border-bottom: 1px solid #222;">
+            <div style="padding: 40px;">
+                <p style="font-size: 1.2rem; color: #eee; line-height: 1.8;">
+                    We strongly recommend <strong>Hand-Coded Solutions</strong> for serious businesses. While templates offer speed, custom coding offers <strong>unlimited power</strong>. Our mission is to provide you with a digital identity that is not only visually stunning but also technically superior—optimized for extreme speed, military-grade security, and top-tier SEO rankings.
+                </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section style="margin-top: 80px; text-align: center; background: linear-gradient(45deg, #00f2ff11, transparent); padding: 50px; border-radius: 20px; border: 1px solid #333;">
-            <h2 class="tech-font">READY TO UPGRADE?</h2>
-            <p>Don't settle for average. Get a premium digital identity today.</p>
-            <a href="contact.html" style="background: #00f2ff; color: black; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px;">WORK WITH US</a>
-        </section>
-    </div>
+    <section class="section-padding">
+        <h2 class="tech-font" style="text-align: center; margin-bottom: 50px;">OUR <span class="cyan-text">ENGINEERING</span> DOMAINS</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+            <div class="glass-card">
+                <h3 class="cyan-text tech-font">PREMIUM WORDPRESS</h3>
+                <p style="font-size: 14px; color: #bbb; margin-bottom: 20px;">Beyond standard templates. We build bespoke WordPress experiences.</p>
+                <ul style="list-style: none; padding: 0; font-size: 15px; color: #eee;">
+                    <li>✓ Advanced Page Builder Customization</li>
+                    <li>✓ High-Conversion UI/UX Design</li>
+                    <li>✓ E-commerce & Payment Integration</li>
+                    <li>✓ 100% Mobile & Tablet Optimization</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <h3 class="cyan-text tech-font">ELITE HAND-CODING</h3>
+                <p style="font-size: 14px; color: #bbb; margin-bottom: 20px;">Writing the future, one line at a time. Pure performance, no bloat.</p>
+                <ul style="list-style: none; padding: 0; font-size: 15px; color: #eee;">
+                    <li>✓ Clean HTML5 & CSS3 Architecture</li>
+                    <li>✓ Dynamic JavaScript Functionality</li>
+                    <li>✓ Lightning Fast Loading Speeds</li>
+                    <li>✓ SEO-First Code Structure</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass-card" style="margin-top: 40px; padding: 0; overflow: hidden;">
+            <img src="Awais About2.jpg" alt="Coding Mastery" style="width: 100%;">
+            <div style="padding: 30px; text-align: center;">
+                <h4 class="tech-font">WHY SETTLE FOR AVERAGE?</h4>
+                <p style="color: #888;">Our coding expertise ensures your website is 10x faster than traditional template-based sites.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="text-align: center; background: linear-gradient(180deg, #050505, #00f2ff08);">
+        <h2 class="tech-font cyan-text">WHY CHOOSE AH PREMIUM?</h2>
+        <div style="max-width: 800px; margin: 30px auto;">
+            <p style="color: #ccc; font-size: 1.1rem; margin-bottom: 30px;">
+                In a world of generic websites, we provide <strong>Elite Digital Craftsmanship</strong>. Your project is directly supervised by an expert systems engineer, ensuring zero compromises on quality. We don't just deliver a link; we deliver a business-growing engine.
+            </p>
+            <a href="contact.html" class="tech-font" style="display: inline-block; background: #00f2ff; color: #000; padding: 18px 45px; text-decoration: none; font-weight: bold; border-radius: 4px; box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);">HIRE THE EXPERTS</a>
+        </div>
+    </section>
 
 </body>
-                  </html>
-                  
+</html>
