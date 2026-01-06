@@ -337,3 +337,40 @@ body {
     margin-right: 0; /* Removing extra margin */
   }
   
+.official-note {
+    background: #f8f9fa; /* Light professional gray */
+    border-left: 10px solid #007bff; /* Professional blue accent */
+    padding: 25px;
+    margin: 40px auto;
+    max-width: 850px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.note-badge {
+    background: #007bff;
+    color: #ffffff;
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.official-note p {
+    color: #333333;
+    font-size: 17px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Team Grid spacing adjustment */
+.team-section {
+    padding: 20px 0;
+}
