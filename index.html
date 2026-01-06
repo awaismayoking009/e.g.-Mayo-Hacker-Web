@@ -282,5 +282,25 @@ window.onload = ()=>{
         sideMenu.classList.toggle('active');
     });
 </script>   
+
+ <script>
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
+
+  // Safety check
+  if (!loader) return;
+
+  // Thora sa wait, phir hide
+  setTimeout(function () {
+    loader.style.opacity = "0";
+    loader.style.transition = "opacity 0.4s ease";
+
+    setTimeout(function () {
+      loader.style.display = "none";
+    }, 400);
+  }, 1800); // ~2 second
+});
+ </script>
+    
 </body>
           </html>
