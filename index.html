@@ -260,47 +260,39 @@ while(true){
 </section>
 
 <script>
-let percent = 0;
-let loaderText = document.querySelector(".hacker-text");
-let interval = setInterval(()=>{
-    percent+=1;
-    if(percent>100) clearInterval(interval);
-    loaderText.innerText="LOADING SYSTEM "+percent+"%";
-},25);
+    // 1. Loader Logic (Extreme Fast & Smart)
+    const hasSeenIntro = sessionStorage.getItem('introSeen');
+    const loader = document.getElementById("loader");
+    const loaderText = document.querySelector(".hacker-text");
 
-window.onload = ()=>{
-    setTimeout(()=>{document.getElementById("loader").style.display="none";},3000);
-};
-</script>
+    if (hasSeenIntro) {
+        loader.style.display = "none";
+    } else {
+        let percent = 0;
+        let interval = setInterval(() => {
+            percent += 10; // 10% jumps for super speed
+            if (percent <= 100) {
+                loaderText.innerText = "LOADING SYSTEM " + percent + "%";
+            } else {
+                clearInterval(interval);
+                sessionStorage.setItem('introSeen', 'true');
+                loader.style.opacity = "0";
+                setTimeout(() => { loader.style.display = "none"; }, 300);
+            }
+        }, 50); // Fast timing
+    }
 
-<script>
+    // 2. Menu Logic (Working perfectly)
     const menuBtn = document.getElementById('menuBtn');
     const sideMenu = document.getElementById('sideMenu');
 
-    // When user clicks the 3 lines
-    menuBtn.addEventListener('click', () => {
-        sideMenu.classList.toggle('active');
-    });
-</script>   
+    if(menuBtn && sideMenu) {
+        menuBtn.addEventListener('click', () => {
+            sideMenu.classList.toggle('active');
+        });
+    }
+</script>
 
- <script>
-window.addEventListener("load", function () {
-  const loader = document.getElementById("loader");
-
-  // Safety check
-  if (!loader) return;
-
-  // Thora sa wait, phir hide
-  setTimeout(function () {
-    loader.style.opacity = "0";
-    loader.style.transition = "opacity 0.4s ease";
-
-    setTimeout(function () {
-      loader.style.display = "none";
-    }, 400);
-  }, 1800); // ~2 second
-});
- </script>
     
 </body>
           </html>
