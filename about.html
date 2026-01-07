@@ -3,113 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Our Founder | AH Premium Web Studio</title>
+    <title>About AH Premium Studio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <style>
-        body { background: #050505; color: #ffffff; font-family: 'Poppins', sans-serif; line-height: 1.6; overflow-x: hidden; }
-        .cyan-text { color: #00f2ff; text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
-        .tech-font { font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
-        .section-padding { padding: 80px 8%; }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(0, 242, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 30px;
-            transition: 0.4s;
-        }
-        .glass-card:hover { border-color: #00f2ff; transform: translateY(-5px); }
-
-        .founder-frame {
-            border: 4px solid #00f2ff;
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
-            border-radius: 20px;
-            max-width: 100%;
-            height: auto;
+        /* Hero Section Styling */
+        .about-hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('About picture1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid #00f2ff;
         }
 
-        .highlight-box {
-            border-left: 4px solid #00f2ff;
-            padding-left: 20px;
-            background: linear-gradient(90deg, rgba(0, 242, 255, 0.05), transparent);
-            margin: 25px 0;
-        }
-
-        .badge {
-            background: #00f2ff;
-            color: #000;
-            padding: 4px 12px;
-            font-size: 12px;
-            font-weight: bold;
-            border-radius: 4px;
-            display: inline-block;
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #00f2ff;
+            font-size: 3.5rem;
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
             margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #ffffff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-    <header style="padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #111;">
-        <h2 class="tech-font cyan-text" style="margin:0;">AH STUDIO</h2>
-        <a href="index.html" style="text-decoration:none; color:#00f2ff; border:1px solid #00f2ff; padding:8px 20px; border-radius:5px; font-weight:bold; font-size:14px;">GO BACK</a>
+    <header style="padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.9); position: sticky; top: 0; z-index: 1000;">
+        <div class="logo">
+            <h2 style="font-family: 'Orbitron', sans-serif; color: #00f2ff; margin: 0;">AH <span style="color: white;">STUDIO</span></h2>
+        </div>
+        <nav>
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold; border: 1px solid #00f2ff; padding: 8px 20px; border-radius: 5px; transition: 0.3s;">BACK TO HOME</a>
+        </nav>
     </header>
 
-    <section class="section-padding" style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center;">
-        <div style="flex: 1; min-width: 300px; text-align: center;">
-            <img src="awais.jpg" alt="Awais Mayo" class="founder-frame" style="width: 320px;">
-        </div>
-        <div style="flex: 1.5; min-width: 300px;">
-            <span class="badge tech-font">THE ARCHITECT</span>
-            <h1 class="tech-font" style="font-size: 2.8rem; margin: 10px 0;">AWAIS <span class="cyan-text">MAYO</span></h1>
-            <h3 class="cyan-text" style="font-weight: 400; margin-bottom: 20px;">Founder & Lead Systems Engineer</h3>
-            <div class="highlight-box">
-                <p style="font-style: italic; color: #ccc;">
-                    "Awais Mayo is not just a developer; he is a master of digital logic. He personally engineers every project, ensuring that every line of code serves a purpose. His deep expertise in complex architecture transforms simple ideas into high-performance digital assets."
-                </p>
-            </div>
-            <p style="color: #999;">With a relentless focus on clean code and futuristic aesthetics, Awais ensures that AH Premium Studio remains at the forefront of the web development industry.</p>
-        </div>
+    <section class="about-hero">
+        <h1 class="hero-title">WE CRAFT CODE</h1>
+        <p class="hero-subtitle">Engineering Digital Excellence Since Day One</p>
+        <div style="width: 100px; height: 4px; background: #00f2ff; margin-top: 20px; box-shadow: 0 0 10px #00f2ff;"></div>
     </section>
 
-    <section class="section-padding" style="background: #080808; text-align: center;">
-        <h2 class="tech-font cyan-text">THE ELITE SUGGESTION</h2>
-        <div class="glass-card" style="max-width: 1000px; margin: 40px auto; padding: 0; overflow: hidden;">
-            <img src="Awais About1.jpg" alt="Visionary Thinking" style="width: 100%; border-bottom: 1px solid #222;">
-            <div style="padding: 40px;">
-                <p style="font-size: 1.2rem; color: #eee; line-height: 1.8;">
-                    We strongly recommend <strong>Hand-Coded Solutions</strong> for serious businesses. While templates offer speed, custom coding offers <strong>unlimited power</strong>. Our mission is to provide you with a digital identity that is not only visually stunning but also technically superior—optimized for extreme speed, military-grade security, and top-tier SEO rankings.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <h2 class="tech-font" style="text-align: center; margin-bottom: 50px;">OUR <span class="cyan-text">ENGINEERING</span> DOMAINS</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-            <div class="glass-card">
-                <h3 class="cyan-text tech-font">PREMIUM WORDPRESS</h3>
-                <p style="font-size: 14px; color: #bbb; margin-bottom: 20px;">Beyond standard templates. We build bespoke WordPress experiences.</p>
-                <ul style="list-style: none; padding: 0; font-size: 15px; color: #eee;">
-                    <li>✓ Advanced Page Builder Customization</li>
-                    <li>✓ High-Conversion UI/UX Design</li>
-                    <li>✓ E-commerce & Payment Integration</li>
-                    <li>✓ 100% Mobile & Tablet Optimization</li>
-                </ul>
-            </div>
-
-            <div class="glass-card">
-                <h3 class="cyan-text tech-font">ELITE HAND-CODING</h3>
-                <p style="font-size: 14px; color: #bbb; margin-bottom: 20px;">Writing the future, one line at a time. Pure performance, no bloat.</p>
-                <ul style="list-style: none; padding: 0; font-size: 15px; color: #eee;">
-                    <li>✓ Clean HTML5 & CSS3 Architecture</li>
-                    <li>✓ Dynamic JavaScript Functionality</li>
-                    <li>✓ Lightning Fast Loading Speeds</li>
-                    <li>✓ SEO-First Code Structure</li>
-                </ul>
+    </body>
+</html>
+</ul>
             </div>
         </div>
 
