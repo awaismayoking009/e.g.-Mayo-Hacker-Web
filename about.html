@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | AH Premium Studio</title>
+    <title>About Our Vision | AH Premium Studio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -13,67 +13,90 @@
         .cyan-text { color: #00f2ff; text-shadow: 0 0 15px rgba(0, 242, 255, 0.6); }
         .tech-font { font-family: 'Orbitron', sans-serif; letter-spacing: 3px; }
 
-        /* Full Screen Image Sections */
+        /* Full Screen Image Sections with Parallax */
         .full-img-box {
             width: 100%;
             height: 100vh;
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax Effect */
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: 2px solid #00f2ff;
+            position: relative;
         }
 
-        /* Large Detail Text Sections */
-        .detail-section {
-            padding: 100px 10%;
-            background: #050505;
+        .img-overlay-text {
+            background: rgba(0,0,0,0.6);
+            padding: 30px 50px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 242, 255, 0.3);
             text-align: center;
         }
 
+        /* Detail Text Sections */
+        .detail-section {
+            padding: 120px 10%;
+            background: #050505;
+            text-align: center;
+            border-bottom: 1px solid #111;
+        }
+
         .large-text {
-            font-size: 1.4rem;
-            line-height: 2;
+            font-size: 1.3rem;
+            line-height: 2.2;
             color: #ccc;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 2.8rem;
+            margin-bottom: 40px;
             text-transform: uppercase;
         }
 
-        /* Founder Cards Style */
+        /* Founder Cards */
         .founder-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 50px;
-            padding: 50px 0;
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .founder-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #00f2ff;
+            background: linear-gradient(145deg, #0a0a0a, #111);
+            border: 1px solid #00f2ff33;
             padding: 40px;
             border-radius: 20px;
-            width: 450px;
-            transition: 0.5s;
+            width: 480px;
+            transition: 0.4s ease;
         }
-        .founder-card:hover { transform: translateY(-10px); box-shadow: 0 0 30px #00f2ff33; }
+        .founder-card:hover { border-color: #00f2ff; transform: translateY(-10px); box-shadow: 0 10px 40px rgba(0, 242, 255, 0.15); }
+
+        /* Tech Stack Icons Style */
+        .tech-tag {
+            border: 1px solid #333;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #888;
+            transition: 0.3s;
+        }
+        .tech-tag:hover { color: #00f2ff; border-color: #00f2ff; }
 
         header {
             padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             position: fixed;
             top: 0; width: 100%; z-index: 1000;
+            border-bottom: 1px solid #111;
         }
     </style>
 </head>
@@ -81,69 +104,97 @@
 
     <header>
         <h2 class="tech-font cyan-text">AH <span style="color:white">STUDIO</span></h2>
-        <a href="index.html" style="color: #00f2ff; text-decoration: none; border: 1px solid #00f2ff; padding: 10px 25px; border-radius: 5px; font-weight: bold;">HOME</a>
+        <a href="index.html" style="color: #00f2ff; text-decoration: none; border: 1px solid #00f2ff; padding: 10px 25px; border-radius: 5px; font-weight: bold; font-size: 13px;">GO BACK</a>
     </header>
 
     <div class="full-img-box" style="background-image: url('About picture1.jpg');">
-        <h1 class="tech-font cyan-text" style="font-size: 4rem; text-align: center;">WE CRAFT<br>THE FUTURE</h1>
+        <div class="img-overlay-text">
+            <h1 class="tech-font cyan-text" style="font-size: 3.5rem;">BEYOND THE CODE</h1>
+            <p style="letter-spacing: 5px; color: #fff;">ESTABLISHED IN EXCELLENCE</p>
+        </div>
     </div>
 
-    <div class="full-img-box" style="background-image: url('Awais About2.jpg');"></div>
+    <div class="full-img-box" style="background-image: url('Awais About2.jpg'); height: 80vh;"></div>
     <section class="detail-section">
         <h2 class="tech-font cyan-text section-title">HIGH-PERFORMANCE CUSTOM CODE</h2>
         <p class="large-text">
-            Our high-performance custom coding is designed for those who refuse to settle for mediocrity. Every single line of code is hand-crafted to provide elite speed, absolute security, and a 100% clean architecture. Unlike standard templates that slow down your business, our custom frameworks are built for heavy traffic and extreme scalability. We utilize the latest industry standards in HTML5, CSS3, and modern JavaScript to ensure your digital asset is not just a website, but a powerful growth engine that outperforms every competitor in the digital landscape.
+            In the modern digital era, speed and security are not optional—they are mandatory. Our high-performance custom coding service is engineered for clients who demand perfection. We write every line of HTML5, CSS3, and JavaScript manually to eliminate "bloated" code found in cheap templates. This ensures your website loads in under 1 second, remains invincible against security threats, and provides a 100% unique user interface. When you choose custom code, you aren't just buying a website; you are investing in a future-proof digital engine that dominates search engines and scales as your business grows.
         </p>
     </section>
 
-    <div class="full-img-box" style="background-image: url('Awais About1.jpg');"></div>
+    <div class="full-img-box" style="background-image: url('Awais About1.jpg'); height: 80vh;"></div>
     <section class="detail-section">
         <h2 class="tech-font cyan-text section-title">PREMIUM WORDPRESS ARCHITECTURE</h2>
         <p class="large-text">
-            We transform WordPress into a high-end business machine. Our approach goes beyond simple themes; we build custom-engineered WordPress environments that focus on conversion-driven design and unmatched stability. We meticulously optimize every plugin and database query to maintain peak performance. For businesses that need the flexibility of a CMS with the luxury of a custom design, our WordPress solutions provide the perfect balance of ease and elite sophistication, ensuring a professional identity that lasts.
+            We redefine the possibilities of WordPress by engineering bespoke environments tailored to high-conversion business goals. We move beyond basic theme installations, focusing on surgical-level customization and database optimization. Our WordPress builds are optimized for core web vitals, ensuring that despite the power of a CMS, your site remains lightning-fast. For brands that require a manageable backend without sacrificing elite design aesthetics, our premium WordPress architecture offers the most sophisticated balance of flexibility and professional luxury.
         </p>
     </section>
 
-    <section class="detail-section" style="background: #000; border-top: 1px solid #222;">
+    <section class="detail-section" style="background: #000;">
         <h2 class="tech-font section-title">OUR <span class="cyan-text">ELITE SUGGESTION</span></h2>
-        <p class="large-text" style="color: #fff;">
-            In a world full of "good enough" websites, we suggest you aim for **Digital Dominance**. A custom-coded website is the ultimate strategic investment for any brand. It offers total creative freedom, 10x faster loading speeds, and a security shield that templates simply cannot provide. If you are building a brand that intends to lead the market, don't just build a site—engineer a masterpiece that reflects your vision. Custom coding is not an expense; it is the most powerful tool in your business arsenal.
+        <p class="large-text" style="margin-bottom: 80px;">
+            If your goal is to lead the market, our suggestion is to choose **Digital Dominance through Custom Engineering**. A hand-coded platform is a long-term asset that grows in value, offering total creative freedom and military-grade stability. 
         </p>
+        
+        <h3 class="tech-font cyan-text" style="margin-bottom: 40px;">THE AH STRATEGIC PROCESS</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
+            <div class="founder-card" style="width: auto; padding: 30px;">
+                <h4 class="cyan-text tech-font">DISCOVERY</h4>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Deep analysis of your brand's DNA and business objectives.</p>
+            </div>
+            <div class="founder-card" style="width: auto; padding: 30px;">
+                <h4 class="cyan-text tech-font">ENGINEERING</h4>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Developing high-end logic with 100% clean, hand-written code.</p>
+            </div>
+            <div class="founder-card" style="width: auto; padding: 30px;">
+                <h4 class="cyan-text tech-font">OPTIMIZATION</h4>
+                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Rigorous testing for speed, SEO, and security protocols.</p>
+            </div>
+        </div>
     </section>
 
     <section class="detail-section">
         <h2 class="tech-font cyan-text section-title">THE ARCHITECTS</h2>
         <div class="founder-container">
             <div class="founder-card">
-                <img src="awais.jpg" style="width:100%; border-radius:15px; border: 2px solid #00f2ff; margin-bottom:20px;">
+                <img src="awais.jpg" alt="Awais Mayo" style="width:100%; height: 350px; object-fit: cover; border-radius:15px; border: 1px solid #00f2ff; margin-bottom:25px;">
                 <h3 class="tech-font">AWAIS MAYO</h3>
-                <p class="cyan-text">Founder & Lead Systems Engineer</p>
-                <p style="margin-top:15px; font-size: 0.9rem; color: #bbb;">With over 9 years of expertise in full-stack development and system logic, Awais Mayo oversees every technical aspect of AH Studio. His mastery of code ensures that every project meets the highest international standards of performance and security.</p>
+                <p class="cyan-text" style="font-size: 0.9rem; margin-bottom: 15px;">FOUNDER & LEAD SYSTEMS ENGINEER</p>
+                <p style="font-size: 0.9rem; color: #ccc; line-height: 1.8;">
+                    With over 9 years of mastery in systems architecture and complex coding, Awais Mayo is the technical heart of AH Studio. He personally supervises every line of code to ensure it meets the highest global standards of efficiency and performance.
+                </p>
             </div>
             <div class="founder-card">
-                <img src="haseeb.jpg" style="width:100%; border-radius:15px; border: 2px solid #00f2ff; margin-bottom:20px;">
+                <img src="haseeb.jpg" alt="Haseeb" style="width:100%; height: 350px; object-fit: cover; border-radius:15px; border: 1px solid #00f2ff; margin-bottom:25px;">
                 <h3 class="tech-font">HASEEB</h3>
-                <p class="cyan-text">Co-Founder & Creative Director</p>
-                <p style="margin-top:15px; font-size: 0.9rem; color: #bbb;">Haseeb brings the soul to the code. As a creative visionary, he ensures that every digital product we deliver is not only technically perfect but also visually breathtaking. His eye for detail and design strategy makes AH Studio a leader in digital aesthetics.</p>
+                <p class="cyan-text" style="font-size: 0.9rem; margin-bottom: 15px;">CO-FOUNDER & CREATIVE DIRECTOR</p>
+                <p style="font-size: 0.9rem; color: #ccc; line-height: 1.8;">
+                    Haseeb is the visionary responsible for the elite aesthetics of our projects. His creative strategy ensures that every digital product is a visual masterpiece, blending futuristic design with a user-centric experience that captivates audiences.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="detail-section" style="background: linear-gradient(to bottom, #050505, #00f2ff11);">
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
-            <div><h2 class="tech-font cyan-text" style="font-size: 3rem;">9+</h2><p>YEARS OF CODE</p></div>
-            <div><h2 class="tech-font cyan-text" style="font-size: 3rem;">500+</h2><p>ELITE PROJECTS</p></div>
-            <div><h2 class="tech-font cyan-text" style="font-size: 3rem;">100%</h2><p>CLIENT TRUST</p></div>
+    <section class="detail-section" style="background: #000;">
+        <h2 class="tech-font section-title" style="font-size: 1.5rem;">OUR <span class="cyan-text">TECH STACK</span></h2>
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 80px;">
+            <span class="tech-tag">HTML5/CSS3</span>
+            <span class="tech-tag">JAVASCRIPT ES6</span>
+            <span class="tech-tag">NODE.JS</span>
+            <span class="tech-tag">WORDPRESS Bespoke</span>
+            <span class="tech-tag">SEO ELITE</span>
+            <span class="tech-tag">SSL SECURITY</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; border-top: 1px solid #111; padding-top: 60px;">
+            <div><h2 class="tech-font cyan-text" style="font-size: 3.5rem;">9+</h2><p style="letter-spacing: 3px;">YEARS EXP</p></div>
+            <div><h2 class="tech-font cyan-text" style="font-size: 3.5rem;">500+</h2><p style="letter-spacing: 3px;">PROJECTS</p></div>
+            <div><h2 class="tech-font cyan-text" style="font-size: 3.5rem;">100%</h2><p style="letter-spacing: 3px;">TRUST</p></div>
         </div>
     </section>
 
 </body>
 </html>
-                <p style="margin-top: 20px; color: #ddd; line-height: 1.8;">
-                    With over 9 years of deep-rooted experience in systems engineering and complex web architecture, Awais Mayo is the visionary driving force behind AH Studio. He is not just a CEO but a master coder who has successfully delivered hundreds of high-end digital projects for global clients. His expertise lies in creating complex digital ecosystems that perfectly combine futuristic design aesthetics with rock-solid technical functionality. Awais personally audits every single project to ensure that the AH Premium seal of quality and performance is maintained in every pixel we deliver.
-                </p>
-            </div>
-        </div>
 
         <div class="stats-bar">
             <div class="stat-item tech-font">
