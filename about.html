@@ -3,81 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About AH Premium Studio</title>
+    <title>About Us | AH Premium Studio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
     <style>
-        /* Hero Section Styling */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050505; color: white; font-family: 'Poppins', sans-serif; }
+        
+        /* Hero Section Fix */
         .about-hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('About picture1.jpg');
-            background-size: cover;
-            background-position: center;
+            position: relative;
+            height: 100vh; /* Full Mobile Screen */
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 2px solid #00f2ff;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('About picture1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 20px;
         }
 
         .hero-title {
             font-family: 'Orbitron', sans-serif;
             color: #00f2ff;
-            font-size: 3.5rem;
-            text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+            font-size: 3rem;
+            text-transform: uppercase;
             margin-bottom: 10px;
+            animation: glow 2s infinite alternate;
         }
 
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: #ffffff;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00f2ff; }
+            to { text-shadow: 0 0 30px #00f2ff, 0 0 40px #00f2ff; }
+        }
+
+        /* Section Spacing Fix */
+        .content-section {
+            padding: 60px 20px;
+            background: #050505;
+            text-align: center;
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #00f2ff;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .btn-premium {
+            background: #00f2ff;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 0 15px #00f2ff;
         }
     </style>
 </head>
 <body>
 
-    <header style="padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.9); position: sticky; top: 0; z-index: 1000;">
-        <div class="logo">
-            <h2 style="font-family: 'Orbitron', sans-serif; color: #00f2ff; margin: 0;">AH <span style="color: white;">STUDIO</span></h2>
-        </div>
-        <nav>
-            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold; border: 1px solid #00f2ff; padding: 8px 20px; border-radius: 5px; transition: 0.3s;">BACK TO HOME</a>
-        </nav>
+    <header style="padding: 20px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.8); position: absolute; width: 100%; z-index: 10;">
+        <h2 style="font-family: 'Orbitron', sans-serif; color: #00f2ff; font-size: 1.2rem;">AH STUDIO</h2>
+        <a href="index.html" style="color: white; text-decoration: none; border: 1px solid #00f2ff; padding: 5px 15px; border-radius: 4px; font-size: 0.8rem;">BACK TO HOME</a>
     </header>
 
     <section class="about-hero">
         <h1 class="hero-title">WE CRAFT CODE</h1>
-        <p class="hero-subtitle">Engineering Digital Excellence Since Day One</p>
-        <div style="width: 100px; height: 4px; background: #00f2ff; margin-top: 20px; box-shadow: 0 0 10px #00f2ff;"></div>
+        <p style="letter-spacing: 4px; font-size: 0.9rem; color: #ccc;">ENGINEERING DIGITAL EXCELLENCE</p>
+        <div style="width: 60px; height: 3px; background: #00f2ff; margin-top: 20px;"></div>
     </section>
 
-    </body>
-</html>
-</ul>
-            </div>
-        </div>
-
-        <div class="glass-card" style="margin-top: 40px; padding: 0; overflow: hidden;">
-            <img src="Awais About2.jpg" alt="Coding Mastery" style="width: 100%;">
-            <div style="padding: 30px; text-align: center;">
-                <h4 class="tech-font">WHY SETTLE FOR AVERAGE?</h4>
-                <p style="color: #888;">Our coding expertise ensures your website is 10x faster than traditional template-based sites.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" style="text-align: center; background: linear-gradient(180deg, #050505, #00f2ff08);">
-        <h2 class="tech-font cyan-text">WHY CHOOSE AH PREMIUM?</h2>
-        <div style="max-width: 800px; margin: 30px auto;">
-            <p style="color: #ccc; font-size: 1.1rem; margin-bottom: 30px;">
-                In a world of generic websites, we provide <strong>Elite Digital Craftsmanship</strong>. Your project is directly supervised by an expert systems engineer, ensuring zero compromises on quality. We don't just deliver a link; we deliver a business-growing engine.
+    <section class="content-section">
+        <div class="glass-box">
+            <h2 style="font-family: 'Orbitron', sans-serif; color: #00f2ff; margin-bottom: 20px;">WHY CHOOSE AH PREMIUM?</h2>
+            <p style="line-height: 1.8; color: #ddd;">
+                In a world of generic websites, we provide <strong>Elite Digital Craftsmanship</strong>. 
+                Your project is directly supervised by an expert systems engineer, ensuring zero compromises on quality. 
+                We don't just deliver a link; we deliver a business-growing engine optimized for speed and security.
             </p>
-            <a href="contact.html" class="tech-font" style="display: inline-block; background: #00f2ff; color: #000; padding: 18px 45px; text-decoration: none; font-weight: bold; border-radius: 4px; box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);">HIRE THE EXPERTS</a>
+            <a href="https://wa.me/923295533214" class="btn-premium">HIRE THE EXPERTS</a>
         </div>
     </section>
 
 </body>
 </html>
+
