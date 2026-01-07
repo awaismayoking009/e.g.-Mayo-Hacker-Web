@@ -5,91 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | AH Premium Studio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #050505; color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
         
-        .cyan-text { color: #00f2ff; text-shadow: 0 0 10px rgba(0, 242, 255, 0.5); }
-        .tech-font { font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
+        .cyan-text { color: #00f2ff; text-shadow: 0 0 15px rgba(0, 242, 255, 0.6); }
+        .tech-font { font-family: 'Orbitron', sans-serif; letter-spacing: 3px; }
 
-        /* Hero Image - Exactly like Home Page */
-        .hero-frame {
-            position: relative;
-            width: 90%;
-            height: 450px;
-            margin: 100px auto 40px;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('About picture1.jpg');
+        /* Full Screen Image Sections */
+        .full-img-box {
+            width: 100%;
+            height: 100vh;
             background-size: cover;
             background-position: center;
-            border: 2px solid #00f2ff;
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
-            border-radius: 15px;
+            background-attachment: fixed; /* Parallax Effect */
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #00f2ff;
+        }
+
+        /* Large Detail Text Sections */
+        .detail-section {
+            padding: 100px 10%;
+            background: #050505;
             text-align: center;
         }
 
-        /* Content Sections */
-        .section { padding: 60px 5%; display: flex; flex-direction: column; align-items: center; gap: 40px; }
-        .row { display: flex; flex-wrap: wrap; align-items: center; gap: 50px; max-width: 1200px; width: 100%; margin-bottom: 50px; }
-        .text-side { flex: 1; min-width: 300px; }
-        .image-side { flex: 1; min-width: 300px; text-align: center; }
-        
-        .content-img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            border: 1px solid #00f2ff;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+        .large-text {
+            font-size: 1.4rem;
+            line-height: 2;
+            color: #ccc;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .glass-note {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 4px solid #00f2ff;
-            padding: 30px;
-            border-radius: 0 15px 15px 0;
-            margin-top: 20px;
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
-        /* Stats Animation Section */
-        .stats-bar {
+        /* Founder Cards Style */
+        .founder-container {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
-            width: 100%;
-            background: rgba(0, 242, 255, 0.05);
-            padding: 40px 20px;
-            border-top: 1px solid #00f2ff;
-            border-bottom: 1px solid #00f2ff;
-            margin: 50px 0;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px 0;
         }
 
-        .stat-item h2 { font-size: 2.5rem; color: #00f2ff; margin-bottom: 5px; }
-
-        .founder-img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 4px solid #00f2ff;
-            object-fit: cover;
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.3);
+        .founder-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #00f2ff;
+            padding: 40px;
+            border-radius: 20px;
+            width: 450px;
+            transition: 0.5s;
         }
+        .founder-card:hover { transform: translateY(-10px); box-shadow: 0 0 30px #00f2ff33; }
 
-        /* Header Style */
         header {
             padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.9);
             position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid #111;
+            top: 0; width: 100%; z-index: 1000;
         }
     </style>
 </head>
@@ -97,53 +81,64 @@
 
     <header>
         <h2 class="tech-font cyan-text">AH <span style="color:white">STUDIO</span></h2>
-        <a href="index.html" style="color: #00f2ff; text-decoration: none; border: 1px solid #00f2ff; padding: 8px 20px; border-radius: 5px; font-weight: bold; font-size: 14px;">BACK TO HOME</a>
+        <a href="index.html" style="color: #00f2ff; text-decoration: none; border: 1px solid #00f2ff; padding: 10px 25px; border-radius: 5px; font-weight: bold;">HOME</a>
     </header>
 
-    <section class="hero-frame">
-        <p class="tech-font" style="font-size: 0.9rem; color: #ccc;">INNOVATION & EXCELLENCE</p>
-        <h1 class="tech-font cyan-text" style="font-size: 2.5rem; margin: 10px 0;">WE ENGINEER DIGITAL DREAMS</h1>
-        <div style="width: 80px; height: 4px; background: #00f2ff; box-shadow: 0 0 10px #00f2ff;"></div>
+    <div class="full-img-box" style="background-image: url('About picture1.jpg');">
+        <h1 class="tech-font cyan-text" style="font-size: 4rem; text-align: center;">WE CRAFT<br>THE FUTURE</h1>
+    </div>
+
+    <div class="full-img-box" style="background-image: url('Awais About2.jpg');"></div>
+    <section class="detail-section">
+        <h2 class="tech-font cyan-text section-title">HIGH-PERFORMANCE CUSTOM CODE</h2>
+        <p class="large-text">
+            Our high-performance custom coding is designed for those who refuse to settle for mediocrity. Every single line of code is hand-crafted to provide elite speed, absolute security, and a 100% clean architecture. Unlike standard templates that slow down your business, our custom frameworks are built for heavy traffic and extreme scalability. We utilize the latest industry standards in HTML5, CSS3, and modern JavaScript to ensure your digital asset is not just a website, but a powerful growth engine that outperforms every competitor in the digital landscape.
+        </p>
     </section>
 
-    <div class="section">
-        <div class="row">
-            <div class="text-side">
-                <h2 class="tech-font cyan-text">HIGH-PERFORMANCE CUSTOM CODE</h2>
-                <p style="margin-top: 20px; color: #ddd; line-height: 1.8;">
-                    Our custom-coding approach is the gold standard of modern web development. We write every line of HTML5, CSS3, and JavaScript manually to ensure a lightweight and lightning-fast architecture. Unlike basic templates, our custom-coded websites are built for extreme performance, military-grade security, and 100% clean logic. By eliminating bloated code, we provide a seamless user experience that ranks significantly higher on search engines and provides a solid, scalable foundation for your business growth.
-                </p>
+    <div class="full-img-box" style="background-image: url('Awais About1.jpg');"></div>
+    <section class="detail-section">
+        <h2 class="tech-font cyan-text section-title">PREMIUM WORDPRESS ARCHITECTURE</h2>
+        <p class="large-text">
+            We transform WordPress into a high-end business machine. Our approach goes beyond simple themes; we build custom-engineered WordPress environments that focus on conversion-driven design and unmatched stability. We meticulously optimize every plugin and database query to maintain peak performance. For businesses that need the flexibility of a CMS with the luxury of a custom design, our WordPress solutions provide the perfect balance of ease and elite sophistication, ensuring a professional identity that lasts.
+        </p>
+    </section>
+
+    <section class="detail-section" style="background: #000; border-top: 1px solid #222;">
+        <h2 class="tech-font section-title">OUR <span class="cyan-text">ELITE SUGGESTION</span></h2>
+        <p class="large-text" style="color: #fff;">
+            In a world full of "good enough" websites, we suggest you aim for **Digital Dominance**. A custom-coded website is the ultimate strategic investment for any brand. It offers total creative freedom, 10x faster loading speeds, and a security shield that templates simply cannot provide. If you are building a brand that intends to lead the market, don't just build a site—engineer a masterpiece that reflects your vision. Custom coding is not an expense; it is the most powerful tool in your business arsenal.
+        </p>
+    </section>
+
+    <section class="detail-section">
+        <h2 class="tech-font cyan-text section-title">THE ARCHITECTS</h2>
+        <div class="founder-container">
+            <div class="founder-card">
+                <img src="awais.jpg" style="width:100%; border-radius:15px; border: 2px solid #00f2ff; margin-bottom:20px;">
+                <h3 class="tech-font">AWAIS MAYO</h3>
+                <p class="cyan-text">Founder & Lead Systems Engineer</p>
+                <p style="margin-top:15px; font-size: 0.9rem; color: #bbb;">With over 9 years of expertise in full-stack development and system logic, Awais Mayo oversees every technical aspect of AH Studio. His mastery of code ensures that every project meets the highest international standards of performance and security.</p>
             </div>
-            <div class="image-side">
-                <img src="Awais About2.jpg" alt="Coding Power" class="content-img">
+            <div class="founder-card">
+                <img src="haseeb.jpg" style="width:100%; border-radius:15px; border: 2px solid #00f2ff; margin-bottom:20px;">
+                <h3 class="tech-font">HASEEB</h3>
+                <p class="cyan-text">Co-Founder & Creative Director</p>
+                <p style="margin-top:15px; font-size: 0.9rem; color: #bbb;">Haseeb brings the soul to the code. As a creative visionary, he ensures that every digital product we deliver is not only technically perfect but also visually breathtaking. His eye for detail and design strategy makes AH Studio a leader in digital aesthetics.</p>
             </div>
         </div>
+    </section>
 
-        <div class="row" style="flex-direction: row-reverse;">
-            <div class="text-side">
-                <h2 class="tech-font cyan-text">PREMIUM WORDPRESS SOLUTIONS</h2>
-                <p style="margin-top: 20px; color: #ddd; line-height: 1.8;">
-                    We redefine WordPress by moving beyond simple drag-and-drop themes. Our WordPress solutions focus on high-end customization and premium design aesthetics that reflect your brand's true value. We integrate advanced security protocols and optimize every single plugin to ensure your site remains fast, responsive, and reliable. Whether it’s a professional corporate site or a complex e-commerce platform, we build WordPress ecosystems that are easy for you to manage but look like multi-million dollar custom builds.
-                </p>
-            </div>
-            <div class="image-side">
-                <img src="Awais About1.jpg" alt="WordPress Design" class="content-img">
-            </div>
+    <section class="detail-section" style="background: linear-gradient(to bottom, #050505, #00f2ff11);">
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px;">
+            <div><h2 class="tech-font cyan-text" style="font-size: 3rem;">9+</h2><p>YEARS OF CODE</p></div>
+            <div><h2 class="tech-font cyan-text" style="font-size: 3rem;">500+</h2><p>ELITE PROJECTS</p></div>
+            <div><h2 class="tech-font cyan-text" style="font-size: 3rem;">100%</h2><p>CLIENT TRUST</p></div>
         </div>
+    </section>
 
-        <div class="glass-note" style="max-width: 1000px; text-align: center; border-left: none; border: 1px solid #00f2ff;">
-            <h2 class="tech-font">OUR <span class="cyan-text">ELITE SUGGESTION</span></h2>
-            <p style="margin-top: 20px; color: #eee; font-size: 1.1rem; line-height: 2;">
-                In a highly competitive digital market, our elite suggestion is always to choose a Custom-Coded Website. While WordPress is excellent for fast deployment, a hand-coded site gives you 100% creative freedom and unparalleled technical superiority. It is a long-term strategic investment that ensures your platform never crashes under high traffic and remains immune to common security vulnerabilities. For brands that want to dominate their industry and establish a unique, high-end identity, high-performance custom coding is the only path to true digital excellence.
-            </p>
-        </div>
-
-        <div class="row" style="margin-top: 80px;">
-            <div class="image-side">
-                <img src="awais.jpg" alt="Awais Mayo" class="founder-img">
-            </div>
-            <div class="text-side">
-                <h2 class="tech-font">THE FOUNDER: <span class="cyan-text">AWAIS MAYO</span></h2>
+</body>
+</html>
                 <p style="margin-top: 20px; color: #ddd; line-height: 1.8;">
                     With over 9 years of deep-rooted experience in systems engineering and complex web architecture, Awais Mayo is the visionary driving force behind AH Studio. He is not just a CEO but a master coder who has successfully delivered hundreds of high-end digital projects for global clients. His expertise lies in creating complex digital ecosystems that perfectly combine futuristic design aesthetics with rock-solid technical functionality. Awais personally audits every single project to ensure that the AH Premium seal of quality and performance is maintained in every pixel we deliver.
                 </p>
