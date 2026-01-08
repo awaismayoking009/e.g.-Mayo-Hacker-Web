@@ -3,76 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AH PREMIUM STUDIO | ELITE SOLUTIONS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>AH PREMIUM STUDIO | ELITE ENGINEERING</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- GLOBAL SETTINGS --- */
+        /* --- 1. CORE RESET & SCROLLING --- */
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; line-height: 1.6; }
         .tech-font { font-family: 'Orbitron', sans-serif; }
-        .cyan { color: #00f2ff; }
-        section { padding: 100px 8%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid #111; }
+        .cyan { color: #00f2ff; text-shadow: 0 0 10px rgba(0,242,255,0.4); }
 
-        /* --- NAVIGATION (3 LINES MENU) --- */
-        nav { background: rgba(0,0,0,0.95); padding: 20px 8%; position: fixed; width: 100%; top: 0; z-index: 2000; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
-        .logo { display: flex; align-items: center; gap: 15px; }
-        .logo img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #00f2ff; }
-        
+        /* --- 2. ELITE NAVIGATION (3-LINES MENU) --- */
+        nav { 
+            background: rgba(0,0,0,0.95); padding: 15px 8%; position: fixed; 
+            width: 100%; top: 0; z-index: 5000; display: flex; 
+            justify-content: space-between; align-items: center; border-bottom: 1px solid #222;
+        }
+        .logo-area { display: flex; align-items: center; gap: 15px; }
+        .logo-img { width: 55px; height: 55px; border-radius: 50%; border: 2px solid #00f2ff; object-fit: cover; }
+
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a { color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
         .nav-links a:hover { color: #00f2ff; }
 
-        /* Mobile Menu Button (3 Lines) */
-        .menu-btn { display: none; cursor: pointer; flex-direction: column; gap: 6px; }
-        .menu-btn span { width: 30px; height: 3px; background: #00f2ff; border-radius: 5px; }
+        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 6000; }
+        .hamburger span { width: 30px; height: 3px; background: #00f2ff; border-radius: 10px; transition: 0.4s; }
 
-        /* --- HERO SECTION --- */
-        #home { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('Coding1.jpg'); background-size: cover; background-position: center; }
-        #home h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 20px; }
-
-        /* --- ABOUT SECTION --- */
-        .about-container { display: flex; gap: 50px; align-items: center; }
-        .about-img { flex: 1; border-radius: 20px; border: 2px solid #222; overflow: hidden; }
-        .about-img img { width: 100%; display: block; }
-        .about-text { flex: 1; }
-
-        /* --- SERVICES SECTION --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .service-card { background: #0a0a0a; padding: 40px; border-radius: 20px; border: 1px solid #222; transition: 0.4s; }
-        .service-card:hover { border-color: #00f2ff; transform: translateY(-10px); }
-        .service-card h3 { margin-bottom: 15px; }
-
-        /* --- SKILLS SECTION --- */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-        .skill-box { background: #111; padding: 30px; border-radius: 15px; border-bottom: 4px solid #00f2ff; }
-        .skill-box h4 { font-size: 1.5rem; }
-
-        /* --- TEAM SECTION --- */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .member { background: #0a0a0a; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #111; }
-        .member img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid #00f2ff; margin-bottom: 15px; }
-
-        /* --- CONTACT SECTION --- */
-        .contact-container { text-align: center; max-width: 800px; margin: 0 auto; }
-        .wa-btn { display: inline-block; padding: 20px 50px; background: #00f2ff; color: #000; font-weight: 900; text-decoration: none; border-radius: 10px; margin-top: 30px; }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 90px; left: 0; width: 100%; background: #000; flex-direction: column; text-align: center; padding: 40px 0; border-bottom: 1px solid #222; }
-            .nav-links.active { display: flex; }
-            .menu-btn { display: flex; }
-            .about-container { flex-direction: column; }
+        /* Mobile Menu */
+        @media (max-width: 992px) {
+            .hamburger { display: flex; }
+            .nav-links { 
+                position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; 
+                background: #080808; flex-direction: column; justify-content: center; 
+                align-items: center; transition: 0.5s; border-left: 2px solid #00f2ff;
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.5rem; margin: 20px 0; }
+            .hamburger.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-6px, 6px); }
+            .hamburger.toggle span:nth-child(2) { opacity: 0; }
+            .hamburger.toggle span:nth-child(3) { transform: rotate(45deg) translate(-6px, -7px); }
         }
+
+        /* --- 3. DYNAMIC BACKGROUNDS --- */
+        section { padding: 120px 8%; min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid #111; }
+        .grid-bg { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px); 
+            background-size: 45px 45px; z-index: 1; 
+        }
+
+        /* --- 4. HERO (HOME) --- */
+        #home { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('Coding 1.jpg'); background-size: cover; background-position: center; }
+        .hero-text { position: relative; z-index: 2; }
+        .hero-text h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1; font-weight: 900; }
+
+        /* --- 5. CYBER TRUST (ABOUT) --- */
+        .live-ping { height: 12px; width: 12px; background: #00f2ff; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 10px #00f2ff; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        
+        .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; z-index: 2; position: relative; }
+        .elite-card { background: #0a0a0a; padding: 40px; border-radius: 20px; border: 1px solid #1a1a1a; transition: 0.4s; }
+        .elite-card:hover { border-color: #00f2ff; transform: translateY(-10px); }
+        .danger-bar { border-left: 5px solid #ff4d4d; }
+        .success-bar { border-left: 5px solid #00f2ff; }
+
+        /* --- 6. VIDEO SECTION --- */
+        .video-box { max-width: 1000px; margin: 50px auto; border: 1px solid #333; border-radius: 20px; overflow: hidden; z-index: 2; position: relative; }
+        video { width: 100%; display: block; }
+
+        /* --- 7. TEAM (A TO Z) --- */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 60px; z-index: 2; position: relative; }
+        .member { background: #0a0a0a; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #111; }
+        .member img { width: 160px; height: 160px; border-radius: 50%; border: 3px solid #00f2ff; margin-bottom: 20px; object-fit: cover; }
+
+        /* --- 8. SKILLS --- */
+        .skill-row { margin-bottom: 25px; z-index: 2; position: relative; }
+        .bar-bg { height: 10px; background: #111; border-radius: 10px; margin-top: 8px; overflow: hidden; }
+        .bar-fill { height: 100%; background: #00f2ff; box-shadow: 0 0 15px #00f2ff; }
+
+        /* --- 9. FOOTER --- */
+        .f-strip { display: flex; justify-content: center; gap: 40px; padding: 30px; border-top: 1px solid #111; flex-wrap: wrap; z-index: 2; position: relative; }
+        .f-item { font-size: 10px; letter-spacing: 3px; color: #444; }
+
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">
-            <img src="awais1.png" alt="AH Logo">
+        <div class="logo-area">
+            <img src="awais1.png" alt="Logo" class="logo-img">
             <div class="tech-font">AH <span class="cyan">STUDIO</span></div>
         </div>
-        <div class="nav-links" id="navLinks">
+        <div class="nav-links" id="menu">
             <a href="#home">HOME</a>
             <a href="#about">ABOUT</a>
             <a href="#services">SERVICES</a>
@@ -80,70 +102,94 @@
             <a href="#team">TEAM</a>
             <a href="#contact">CONTACT</a>
         </div>
-        <div class="menu-btn" onclick="toggleMenu()">
+        <div class="hamburger" onclick="toggle()">
             <span></span><span></span><span></span>
         </div>
     </nav>
 
     <section id="home">
-        <h2 class="tech-font cyan">PREMIUM ENGINEERING</h2>
-        <h1 class="tech-font">WE BUILD THE <br>FUTURE OF WEB</h1>
-        <p style="letter-spacing: 5px; color: #888;">SCALABLE | SECURE | FAST</p>
+        <div class="grid-bg"></div>
+        <div class="hero-text">
+            <h2 class="tech-font cyan">ELITE WEB ARCHITECTURE</h2>
+            <h1 class="tech-font">BUILDING <br>DIGITAL ASSETS</h1>
+        </div>
     </section>
 
     <section id="about">
-        <div class="about-container">
-            <div class="about-img">
-                <img src="Coding1.jpg" alt="About AH Studio">
+        <div class="grid-bg"></div>
+        <div style="text-align: center; z-index: 2; position: relative;">
+            <div class="tech-font"><span class="live-ping"></span>SYSTEM_ONLINE</div>
+            <h2 class="tech-font" style="font-size: 3rem; margin-top: 20px;">WHY <span class="cyan">AH STUDIO?</span></h2>
+        </div>
+        <div class="master-grid">
+            <div class="elite-card danger-bar">
+                <h3 class="tech-font">CONVENTIONAL WEB</h3>
+                <p>✕ Slow Templates<br>✕ Weak Security<br>✕ Poor SEO Logic</p>
             </div>
-            <div class="about-text">
-                <h2 class="tech-font cyan" style="font-size: 2.5rem;">ABOUT THE STUDIO</h2>
-                <p style="margin: 20px 0; font-size: 1.1rem; color: #ccc;">AH Web Studio is a premium digital agency specializing in high-performance custom coding and enterprise-grade WordPress solutions. We believe in quality over quantity.</p>
-                <div class="tech-font">✓ 5+ Years Experience<br>✓ 100+ Projects Delivered</div>
+            <div class="elite-card success-bar">
+                <h3 class="tech-font cyan">AH PREMIUM LOGIC</h3>
+                <p>✓ Hand-Written Code<br>✓ Military Encryption<br>✓ Global Rank Optimized</p>
             </div>
+        </div>
+        
+        <div class="video-box">
+            <video autoplay loop muted playsinline>
+                <source src="Awais1.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
     <section id="services">
-        <h2 class="tech-font" style="text-align: center; font-size: 3rem; margin-bottom: 50px;">OUR <span class="cyan">SERVICES</span></h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3 class="tech-font cyan">Custom Web Dev</h3>
-                <p>Hand-crafted websites using HTML, CSS, JS, and React for ultimate speed.</p>
+        <div class="grid-bg"></div>
+        <h2 class="tech-font cyan" style="text-align:center; font-size: 3rem;">CORE SKILLS</h2>
+        <div style="max-width: 800px; margin: 50px auto; width: 100%;">
+            <div class="skill-row">
+                <div class="tech-font" style="display:flex; justify-content:space-between"><span>WEB CODING</span><span>100%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 100%"></div></div>
             </div>
-            <div class="service-card">
-                <h3 class="tech-font cyan">WordPress Elite</h3>
-                <p>Premium WordPress setups with custom themes and advanced security.</p>
+            <div class="skill-row" id="skills">
+                <div class="tech-font" style="display:flex; justify-content:space-between"><span>WORDPRESS ELITE</span><span>95%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 95%"></div></div>
             </div>
-            <div class="service-card">
-                <h3 class="tech-font cyan">Cyber Security</h3>
-                <p>Hardening your web assets against attacks and data breaches.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="tech-font" style="text-align: center; font-size: 3rem; margin-bottom: 50px;">TECHNICAL <span class="cyan">SKILLS</span></h2>
-        <div class="skills-grid">
-            <div class="skill-box"><h4 class="tech-font">HTML5</h4><p>100%</p></div>
-            <div class="skill-box"><h4 class="tech-font">CSS3</h4><p>98%</p></div>
-            <div class="skill-box"><h4 class="tech-font">JS</h4><p>95%</p></div>
-            <div class="skill-box"><h4 class="tech-font">PHP</h4><p>90%</p></div>
-            <div class="skill-box"><h4 class="tech-font">PYTHON</h4><p>85%</p></div>
         </div>
     </section>
 
     <section id="team">
-        <h2 class="tech-font" style="text-align: center; font-size: 3rem; margin-bottom: 50px;">ELITE <span class="cyan">TEAM</span></h2>
+        <h2 class="tech-font" style="text-align:center; font-size: 3rem;">THE <span class="cyan">ENGINEERS</span></h2>
         <div class="team-grid">
             <div class="member"><img src="awais.jpg" alt="Awais"><h3 class="tech-font">Awais Mayo</h3><p>Founder</p></div>
-            <div class="member"><img src="haseeb.jpg" alt="Haseeb"><h3 class="tech-font">Haseeb Ahmad</h3><p>CTO</p></div>
+            <div class="member"><img src="haseeb.jpg" alt="Haseeb"><h3 class="tech-font">Haseeb Ahmad</h3><p>Lead Dev</p></div>
             <div class="member"><img src="mahnoor.jpg" alt="Mahnoor"><h3 class="tech-font">Mahnoor</h3><p>Co-Founder</p></div>
-            <div class="member"><img src="azqa.jpg" alt="Azqa"><h3 class="tech-font">Azqa</h3><p>Designer</p></div>
+            <div class="member"><img src="azqa.jpg" alt="Azqa"><h3 class="tech-font">Azqa</h3><p>UI Expert</p></div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="text-align:center;">
+        <h2 class="tech-font" style="font-size: 4rem;">LET'S <span class="cyan">TALK</span></h2>
+        <a href="https://wa.me/923295533214" target="_blank" class="tech-font" style="display:inline-block; padding: 25px 60px; background:#00f2ff; color:#000; text-decoration:none; border-radius:15px; font-weight:900; margin-top:40px; box-shadow:0 0 30px rgba(0,242,255,0.4)">WHATSAPP NOW</a>
+        
+        <div class="f-strip">
+            <div class="f-item">NETWORK: GLOBAL</div>
+            <div class="f-item">ENCRYPTION: AES-256</div>
+            <div class="f-item">STATUS: SECURE</div>
+        </div>
+    </section>
+
+    <script>
+        function toggle() {
+            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('.hamburger').classList.toggle('toggle');
+        }
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(l => {
+            l.addEventListener('click', () => {
+                document.getElementById('menu').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('toggle');
+            });
+        });
+    </script>
+</body>
+</html>
         <div class="contact-container">
             <h2 class="tech-font" style="font-size: 3.5rem;">GET IN <span class="cyan">TOUCH</span></h2>
             <p style="color: #888; margin-top: 20px;">Ready to start your premium project? Let's talk business.</p>
