@@ -1,150 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Our Vision | AH Premium Studio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        
-        .cyan-text { color: #00f2ff; text-shadow: 0 0 15px rgba(0, 242, 255, 0.6); }
-        .tech-font { font-family: 'Orbitron', sans-serif; letter-spacing: 3px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our Vision | AH Premium Studio</title>
 
-        /* Full Screen Image Sections with Parallax */
-        .full-img-box {
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 2px solid #00f2ff;
-            position: relative;
-        }
-
-        .img-overlay-text {
-            background: rgba(0,0,0,0.6);
-            padding: 30px 50px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(0, 242, 255, 0.3);
-            text-align: center;
-        }
-
-        /* Detail Text Sections */
-        .detail-section {
-            padding: 120px 10%;
-            background: #050505;
-            text-align: center;
-            border-bottom: 1px solid #111;
-        }
-
-        .large-text {
-            font-size: 1.3rem;
-            line-height: 2.2;
-            color: #ccc;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        /* Founder Cards */
-        .founder-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .founder-card {
-            background: linear-gradient(145deg, #0a0a0a, #111);
-            border: 1px solid #00f2ff33;
-            padding: 40px;
-            border-radius: 20px;
-            width: 480px;
-            transition: 0.4s ease;
-        }
-        .founder-card:hover { border-color: #00f2ff; transform: translateY(-10px); box-shadow: 0 10px 40px rgba(0, 242, 255, 0.15); }
-
-        /* Tech Stack Icons Style */
-        .tech-tag {
-            border: 1px solid #333;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: #888;
-            transition: 0.3s;
-        }
-        .tech-tag:hover { color: #00f2ff; border-color: #00f2ff; }
-
-        header {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.95);
-            position: fixed;
-            top: 0; width: 100%; z-index: 1000;
-            border-bottom: 1px solid #111;
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <header>
-        <h2 class="tech-font cyan-text">AH <span style="color:white">STUDIO</span></h2>
-        <a href="index.html" style="color: #00f2ff; text-decoration: none; border: 1px solid #00f2ff; padding: 10px 25px; border-radius: 5px; font-weight: bold; font-size: 13px;">GO BACK</a>
-    </header>
+<!-- MOBILE MENU -->
+<div class="mobile-nav-toggle" id="menuBtn">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
 
-    <div class="full-img-box" style="background-image: url('About picture1.jpg');">
-        <div class="img-overlay-text">
-            <h1 class="tech-font cyan-text" style="font-size: 3.5rem;">BEYOND THE CODE</h1>
-            <p style="letter-spacing: 5px; color: #fff;">ESTABLISHED IN EXCELLENCE</p>
-        </div>
+<nav class="side-menu" id="sideMenu">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="full-img-box" style="background-image:url('About picture1.jpg')">
+  <div class="img-overlay-text">
+    <h1 class="tech-font cyan-text">BEYOND THE CODE</h1>
+    <p>ESTABLISHED IN EXCELLENCE</p>
+  </div>
+</section>
+
+<!-- SECTION -->
+<section class="detail-section">
+  <h2 class="tech-font cyan-text section-title">HIGH-PERFORMANCE CUSTOM CODE</h2>
+  <p class="large-text">
+    We engineer every line of HTML, CSS and JavaScript manually — no bloated templates,
+    no shortcuts. The result is ultra-fast load speed, military-grade stability and
+    a completely unique digital identity that scales with your business.
+  </p>
+</section>
+
+<section class="full-img-box" style="background-image:url('Awais About2.jpg');height:80vh"></section>
+
+<section class="detail-section">
+  <h2 class="tech-font cyan-text section-title">PREMIUM WORDPRESS ARCHITECTURE</h2>
+  <p class="large-text">
+    Our WordPress builds are not themes — they are engineered systems.
+    Optimized databases, custom logic, and elite UI ensure CMS power without speed loss.
+  </p>
+</section>
+
+<section class="detail-section" style="background:#000">
+  <h2 class="tech-font section-title">THE <span class="cyan-text">ARCHITECTS</span></h2>
+
+  <div class="founder-container">
+    <div class="founder-card">
+      <img src="awais.jpg" alt="Awais Mayo">
+      <h3 class="tech-font">AWAIS MAYO</h3>
+      <p class="cyan-text">FOUNDER & LEAD ENGINEER</p>
+      <p>
+        Systems architect with 9+ years of elite-level experience.
+        Personally supervises every project to ensure perfection.
+      </p>
     </div>
 
-    <div class="full-img-box" style="background-image: url('Awais About2.jpg'); height: 80vh;"></div>
-    <section class="detail-section">
-        <h2 class="tech-font cyan-text section-title">HIGH-PERFORMANCE CUSTOM CODE</h2>
-        <p class="large-text">
-            In the modern digital era, speed and security are not optional—they are mandatory. Our high-performance custom coding service is engineered for clients who demand perfection. We write every line of HTML5, CSS3, and JavaScript manually to eliminate "bloated" code found in cheap templates. This ensures your website loads in under 1 second, remains invincible against security threats, and provides a 100% unique user interface. When you choose custom code, you aren't just buying a website; you are investing in a future-proof digital engine that dominates search engines and scales as your business grows.
-        </p>
-    </section>
+    <div class="founder-card">
+      <img src="haseeb.jpg" alt="Haseeb">
+      <h3 class="tech-font">HASEEB</h3>
+      <p class="cyan-text">CO-FOUNDER & CREATIVE DIRECTOR</p>
+      <p>
+        Visionary behind AH’s futuristic design language,
+        ensuring every project dominates visually.
+      </p>
+    </div>
+  </div>
+</section>
 
-    <div class="full-img-box" style="background-image: url('Awais About1.jpg'); height: 80vh;"></div>
-    <section class="detail-section">
-        <h2 class="tech-font cyan-text section-title">PREMIUM WORDPRESS ARCHITECTURE</h2>
-        <p class="large-text">
-            We redefine the possibilities of WordPress by engineering bespoke environments tailored to high-conversion business goals. We move beyond basic theme installations, focusing on surgical-level customization and database optimization. Our WordPress builds are optimized for core web vitals, ensuring that despite the power of a CMS, your site remains lightning-fast. For brands that require a manageable backend without sacrificing elite design aesthetics, our premium WordPress architecture offers the most sophisticated balance of flexibility and professional luxury.
-        </p>
-    </section>
+<section class="detail-section">
+  <h2 class="tech-font cyan-text">OUR TECH STACK</h2>
+  <div class="tech-stack">
+    <span class="tech-tag">HTML5 / CSS3</span>
+    <span class="tech-tag">JavaScript ES6</span>
+    <span class="tech-tag">Node.js</span>
+    <span class="tech-tag">WordPress Bespoke</span>
+    <span class="tech-tag">SEO Elite</span>
+    <span class="tech-tag">Security Hardened</span>
+  </div>
+</section>
 
-    <section class="detail-section" style="background: #000;">
-        <h2 class="tech-font section-title">OUR <span class="cyan-text">ELITE SUGGESTION</span></h2>
-        <p class="large-text" style="margin-bottom: 80px;">
-            If your goal is to lead the market, our suggestion is to choose **Digital Dominance through Custom Engineering**. A hand-coded platform is a long-term asset that grows in value, offering total creative freedom and military-grade stability. 
-        </p>
-        
-        <h3 class="tech-font cyan-text" style="margin-bottom: 40px;">THE AH STRATEGIC PROCESS</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px;">
-            <div class="founder-card" style="width: auto; padding: 30px;">
-                <h4 class="cyan-text tech-font">DISCOVERY</h4>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Deep analysis of your brand's DNA and business objectives.</p>
-            </div>
-            <div class="founder-card" style="width: auto; padding: 30px;">
-                <h4 class="cyan-text tech-font">ENGINEERING</h4>
-                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Developing high-end logic with 100% clean, hand-written code.</p>
+<!-- MENU SCRIPT -->
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+menuBtn.onclick = () => sideMenu.classList.toggle("active");
+</script>
+
+</body>
+</html>                <p style="font-size: 0.85rem; color: #888; margin-top: 10px;">Developing high-end logic with 100% clean, hand-written code.</p>
             </div>
             <div class="founder-card" style="width: auto; padding: 30px;">
                 <h4 class="cyan-text tech-font">OPTIMIZATION</h4>
