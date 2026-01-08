@@ -1,115 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AH PREMIUM STUDIO | ELITE ENGINEERING</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- 1. CORE RESET & SCROLLING --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; line-height: 1.6; }
-        .tech-font { font-family: 'Orbitron', sans-serif; }
-        .cyan { color: #00f2ff; text-shadow: 0 0 10px rgba(0,242,255,0.4); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AH PREMIUM WEB STUDIO</title>
 
-        /* --- 2. ELITE NAVIGATION (3-LINES MENU) --- */
-        nav { 
-            background: rgba(0,0,0,0.95); padding: 15px 8%; position: fixed; 
-            width: 100%; top: 0; z-index: 5000; display: flex; 
-            justify-content: space-between; align-items: center; border-bottom: 1px solid #222;
-        }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-img { width: 55px; height: 55px; border-radius: 50%; border: 2px solid #00f2ff; object-fit: cover; }
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 2px; transition: 0.3s; }
-        .nav-links a:hover { color: #00f2ff; }
+<style>
+/* ================= RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
 
-        .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 6000; }
-        .hamburger span { width: 30px; height: 3px; background: #00f2ff; border-radius: 10px; transition: 0.4s; }
+/* ================= BACKGROUND CODE ================= */
+.code-bg{
+    position:fixed;
+    inset:0;
+    font-family:monospace;
+    opacity:.06;
+    z-index:0;
+    pointer-events:none;
+}
+.code-bg pre{white-space:pre-wrap}
 
-        /* Mobile Menu */
-        @media (max-width: 992px) {
-            .hamburger { display: flex; }
-            .nav-links { 
-                position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; 
-                background: #080808; flex-direction: column; justify-content: center; 
-                align-items: center; transition: 0.5s; border-left: 2px solid #00f2ff;
-            }
-            .nav-links.active { right: 0; }
-            .nav-links a { font-size: 1.5rem; margin: 20px 0; }
-            .hamburger.toggle span:nth-child(1) { transform: rotate(-45deg) translate(-6px, 6px); }
-            .hamburger.toggle span:nth-child(2) { opacity: 0; }
-            .hamburger.toggle span:nth-child(3) { transform: rotate(45deg) translate(-6px, -7px); }
-        }
+/* ================= LOADER ================= */
+#loader{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:.5s;
+}
+#loader h1{
+    font-family:'Orbitron';
+    text-align:center;
+}
+.hacker-text{
+    margin-top:15px;
+    color:#00f2ff;
+    text-align:center;
+}
 
-        /* --- 3. DYNAMIC BACKGROUNDS --- */
-        section { padding: 120px 8%; min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid #111; }
-        .grid-bg { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px), 
-                              linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px); 
-            background-size: 45px 45px; z-index: 1; 
-        }
+/* ================= SIDE MENU ================= */
+.side-menu{
+    position:fixed;
+    top:0;
+    left:-270px;
+    width:270px;
+    height:100%;
+    background:#050505;
+    z-index:1000;
+    transition:.4s;
+    padding-top:90px;
+}
+.side-menu.active{left:0}
+.nav-links{list-style:none}
+.nav-links a{
+    display:block;
+    padding:16px 25px;
+    color:#00f2ff;
+    text-decoration:none;
+    border-bottom:1px solid #111;
+}
 
-        /* --- 4. HERO (HOME) --- */
-        #home { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('Coding 1.jpg'); background-size: cover; background-position: center; }
-        .hero-text { position: relative; z-index: 2; }
-        .hero-text h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1; font-weight: 900; }
+/* ================= HEADER ================= */
+header{
+    position:relative;
+    z-index:10;
+    padding:20px 5%;
+}
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.header-logo-img{width:50px}
+.logo-icon{
+    font-family:'Orbitron';
+    font-size:34px;
+    color:#00f2ff;
+}
+.logo-text span{
+    display:block;
+    font-size:12px;
+    letter-spacing:1px;
+}
+.mobile-nav-toggle{
+    margin-left:auto;
+    cursor:pointer;
+}
+.mobile-nav-toggle .line{
+    width:26px;
+    height:3px;
+    background:#00f2ff;
+    margin:5px 0;
+}
 
-        /* --- 5. CYBER TRUST (ABOUT) --- */
-        .live-ping { height: 12px; width: 12px; background: #00f2ff; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 10px #00f2ff; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-        
-        .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; z-index: 2; position: relative; }
-        .elite-card { background: #0a0a0a; padding: 40px; border-radius: 20px; border: 1px solid #1a1a1a; transition: 0.4s; }
-        .elite-card:hover { border-color: #00f2ff; transform: translateY(-10px); }
-        .danger-bar { border-left: 5px solid #ff4d4d; }
-        .success-bar { border-left: 5px solid #00f2ff; }
+/* ================= HERO ================= */
+.hero-visual{position:relative}
+.hero-visual img{
+    width:100%;
+    height:85vh;
+    object-fit:cover;
+}
+.image-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.image-overlay h2{
+    letter-spacing:3px;
+    font-size:14px;
+    color:#aaa;
+}
+.image-overlay h1{
+    font-family:'Orbitron';
+    margin-top:15px;
+    font-size:32px;
+}
 
-        /* --- 6. VIDEO SECTION --- */
-        .video-box { max-width: 1000px; margin: 50px auto; border: 1px solid #333; border-radius: 20px; overflow: hidden; z-index: 2; position: relative; }
-        video { width: 100%; display: block; }
+/* ================= COMMON SECTIONS ================= */
+section{
+    padding:90px 5%;
+    position:relative;
+    z-index:2;
+}
 
-        /* --- 7. TEAM (A TO Z) --- */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 60px; z-index: 2; position: relative; }
-        .member { background: #0a0a0a; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #111; }
-        .member img { width: 160px; height: 160px; border-radius: 50%; border: 3px solid #00f2ff; margin-bottom: 20px; object-fit: cover; }
+/* ================= COMPARISON ================= */
+.comparison{background:#000}
+.comp-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+.comp-box{
+    flex:1;
+    background:#0b0b0b;
+    padding:45px 30px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid #111;
+}
+.img-row{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+.img-row img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+.comp-box h3{
+    color:#00f2ff;
+    font-family:'Orbitron';
+    margin-bottom:10px;
+}
+.comp-box p{color:#aaa;font-size:14px}
+.vs{
+    font-family:'Orbitron';
+    font-size:42px;
+    color:#333;
+}
 
-        /* --- 8. SKILLS --- */
-        .skill-row { margin-bottom: 25px; z-index: 2; position: relative; }
-        .bar-bg { height: 10px; background: #111; border-radius: 10px; margin-top: 8px; overflow: hidden; }
-        .bar-fill { height: 100%; background: #00f2ff; box-shadow: 0 0 15px #00f2ff; }
+/* ================= VIDEO SECTION ================= */
+.live-coding-showcase{text-align:center}
+.video-frame{
+    position:relative;
+    max-width:800px;
+    margin:40px auto;
+}
+.expert-video{
+    width:100%;
+    border-radius:20px;
+    border:1px solid #111;
+}
+.frame-glow{
+    position:absolute;
+    inset:0;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,242,255,.25);
+    pointer-events:none;
+}
+.video-impact-text{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
+}
+.stat-box h4{
+    font-family:'Orbitron';
+    color:#00f2ff;
+}
+.stat-box p{font-size:12px;color:#aaa}
 
-        /* --- 9. FOOTER --- */
-        .f-strip { display: flex; justify-content: center; gap: 40px; padding: 30px; border-top: 1px solid #111; flex-wrap: wrap; z-index: 2; position: relative; }
-        .f-item { font-size: 10px; letter-spacing: 3px; color: #444; }
+/* ================= TEAM ================= */
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+}
+.team-card{
+    background:#0b0b0b;
+    padding:35px 25px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid #111;
+}
+.profile-img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+.team-card span{font-size:12px;color:#aaa}
 
-    </style>
+/* ================= CTA ================= */
+.cta{
+    background:#00f2ff;
+    color:#000;
+    text-align:center;
+}
+.cta a{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 35px;
+    background:#000;
+    color:#00f2ff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .comp-container{flex-direction:column}
+    .video-impact-text{flex-direction:column}
+}
+</style>
 </head>
+
 <body>
 
-    <nav>
-        <div class="logo-area">
-            <img src="awais1.png" alt="Logo" class="logo-img">
-            <div class="tech-font">AH <span class="cyan">STUDIO</span></div>
-        </div>
-        <div class="nav-links" id="menu">
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#services">SERVICES</a>
-            <a href="#skills">SKILLS</a>
-            <a href="#team">TEAM</a>
-            <a href="#contact">CONTACT</a>
-        </div>
-        <div class="hamburger" onclick="toggle()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
+<!-- BACKGROUND AUTO CODE -->
+<div class="code-bg">
+<pre><code>
+const studio = "AH WEB STUDIO";
+function buildFuture(){
+  return "Secure • Fast • Premium";
+}
+while(true){ buildFuture(); }
+</code></pre>
+</div>
 
-    <section id="home">
-        <div class="grid-bg"></div>
-        <div class="hero-text">
+<!-- LOADER -->
+<div id="loader">
+  <div>
+    <h1>WELCOME<br><span style="color:#00f2ff">AH WEB STUDIO</span></h1>
+    <div class="hacker-text">INITIALIZING SYSTEM…</div>
+  </div>
+</div>
+
+<!-- SIDE MENU -->
+<nav class="side-menu" id="sideMenu">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+<div class="logo-box">
+<img src="awais1.png" class="header-logo-img" alt="">
+<div class="logo-icon">AH</div>
+<div class="logo-text">
+<span>WEB</span>
+<span>Development</span>
+<span>Studio</span>
+</div>
+<div class="mobile-nav-toggle" id="menuBtn">
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</div>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero-visual">
+<img src="Coding 1.jpg" alt="">
+<div class="image-overlay">
+<h2>INNOVATION & EXCELLENCE</h2>
+<h1>SIMPLICITY IS THE ULTIMATE SOPHISTICATION</h1>
+</div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+<div class="comp-container">
+<div class="comp-box">
+<div class="img-row">
+<img src="wordpress 1.jpg">
+<img src="wordpress 2.png">
+</div>
+<h3>WORDPRESS</h3>
+<p>Fast deployment but limited control</p>
+</div>
+
+<div class="vs">VS</div>
+
+<div class="comp-box">
+<div class="img-row">
+<img src="Coding 1.jpg">
+<img src="Coding 2.png">
+</div>
+<h3>CUSTOM CODING</h3>
+<p>Elite security & performance</p>
+</div>
+</div>
+</section>
+
+<!-- VIDEO -->
+<section class="live-coding-showcase">
+<h2 class="glitch-text">HAND-CRAFTED PRECISION</h2>
+<p class="tagline">WE ENGINEER — NOT DRAG & DROP</p>
+
+<div class="video-frame">
+<video autoplay loop muted playsinline class="expert-video">
+<source src="Awais1.mp4" type="video/mp4">
+</video>
+<div class="frame-glow"></div>
+</div>
+
+<div class="video-impact-text">
+<div class="stat-box"><h4>99.9%</h4><p>CODE PURITY</p></div>
+<div class="stat-box"><h4>ULTRA</h4><p>LOW LATENCY</p></div>
+<div class="stat-box"><h4>ELITE</h4><p>SECURITY</p></div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+<div class="team-grid">
+<div class="team-card"><img src="awais.jpg" class="profile-img"><h3>Awais Mayo</h3><span>Founder & CEO</span></div>
+<div class="team-card"><img src="mahnoor.jpg" class="profile-img"><h3>Mahnoor Awais</h3><span>Co-Founder</span></div>
+<div class="team-card"><img src="haseeb.jpg" class="profile-img"><h3>Haseeb Ahmad</h3><span>CTO</span></div>
+<div class="team-card"><img src="azqa.jpg" class="profile-img"><h3>Azqa Haseeb</h3><span>UI/UX</span></div>
+<div class="team-card"><img src="rizwan.jpg" class="profile-img"><h3>Rizwan CH</h3><span>Backend</span></div>
+<div class="team-card"><img src="ali.jpg" class="profile-img"><h3>Ali Rehmani</h3><span>Marketing</span></div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2>READY TO BUILD YOUR WEBSITE?</h2>
+<a href="https://wa.me/923295533214" target="_blank">Contact on WhatsApp</a>
+</section>
+
+<script>
+/* LOADER */
+setTimeout(()=>{
+document.getElementById("loader").style.opacity="0";
+setTimeout(()=>document.getElementById("loader").remove(),500);
+},1200);
+
+/* MENU */
+document.getElementById("menuBtn").onclick=()=>{
+document.getElementById("sideMenu").classList.toggle("active");
+};
+</script>
+
+</body>
+    </html>        <div class="hero-text">
             <h2 class="tech-font cyan">ELITE WEB ARCHITECTURE</h2>
             <h1 class="tech-font">BUILDING <br>DIGITAL ASSETS</h1>
         </div>
