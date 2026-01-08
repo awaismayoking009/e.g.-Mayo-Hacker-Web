@@ -187,7 +187,167 @@ while(true){
 
     /* Animations */
     @keyframes pulseGlow {
-        from { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+        from { transform: trans<section class="cyber-trust-section">
+    <div class="grid-bg"></div>
+    
+    <div class="header-box">
+        <div class="live-dot-container">
+            <span class="live-ping"></span>
+            <span class="tech-font status-text">CORE_SYSTEMS: <span class="cyan-text">ACTIVE</span></span>
+        </div>
+        <h2 class="tech-font main-title">WHY ELITE BRANDS CHOOSE <span class="cyan-text">AH STUDIO</span></h2>
+    </div>
+
+    <div class="master-grid">
+        <div class="elite-card danger-border">
+            <h3 class="tech-font">CONVENTIONAL WEB</h3>
+            <p class="card-desc">Standard industry flaws we eliminate.</p>
+            <div class="points">
+                <div class="p-item"><span>✕</span> Slow & Heavy Templates</div>
+                <div class="p-item"><span>✕</span> Security Vulnerabilities</div>
+                <div class="p-item"><span>✕</span> Poor SEO & Zero Logic</div>
+            </div>
+        </div>
+
+        <div class="elite-card success-border">
+            <div class="elite-tag">ULTIMATE STANDARD</div>
+            <h3 class="tech-font cyan-text">AH PREMIUM LOGIC</h3>
+            <p class="card-desc">The peak of high-end engineering.</p>
+            <div class="points">
+                <div class="p-item cyan-text"><span>✓</span> Hand-Written Clean Code</div>
+                <div class="p-item cyan-text"><span>✓</span> Military-Grade Data Security</div>
+                <div class="p-item cyan-text"><span>✓</span> Elite Google Rank Optimization</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="global-footer">
+        <div class="f-item">NETWORK: <span class="white">GLOBAL</span></div>
+        <div class="f-item">UPTIME: <span class="white">99.9%</span></div>
+        <div class="f-item">ENCRYPTION: <span class="white">AES-256</span></div>
+    </div>
+</section>
+
+<style>
+    .cyber-trust-section {
+        background: #000;
+        padding: 100px 5%;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        border-top: 1px solid #111;
+    }
+
+    .grid-bg {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        z-index: 1;
+    }
+
+    .header-box { position: relative; z-index: 2; margin-bottom: 60px; }
+    
+    .live-dot-container {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255,255,255,0.05);
+        padding: 8px 20px;
+        border-radius: 50px;
+        border: 1px solid #222;
+        margin-bottom: 20px;
+    }
+
+    .live-ping {
+        height: 8px; width: 8px;
+        background: #00f2ff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00f2ff;
+        animation: pulsePing 1.5s infinite;
+    }
+
+    @keyframes pulsePing { 
+        0% { opacity: 1; transform: scale(1); } 
+        50% { opacity: 0.4; transform: scale(1.2); } 
+        100% { opacity: 1; transform: scale(1); } 
+    }
+
+    .main-title { font-size: 2rem; letter-spacing: 2px; color: #fff; }
+
+    .master-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .elite-card {
+        background: rgba(10, 10, 10, 0.8);
+        padding: 50px 30px;
+        border-radius: 20px;
+        position: relative;
+        transition: 0.4s;
+        border: 1px solid #111;
+        text-align: left;
+    }
+
+    .danger-border { border-left: 4px solid #ff4d4d; }
+    .success-border { 
+        border-left: 4px solid #00f2ff; 
+        border-top: 1px solid rgba(0, 242, 255, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 242, 255, 0.05);
+    }
+
+    .elite-tag {
+        position: absolute;
+        top: -12px; right: 20px;
+        background: #00f2ff;
+        color: #000;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .card-desc { color: #666; font-size: 0.85rem; margin: 10px 0 25px 0; }
+
+    .p-item {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        color: #ccc;
+        display: flex;
+        gap: 15px;
+    }
+
+    .global-footer {
+        position: relative;
+        z-index: 2;
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #111;
+    }
+
+    .f-item { font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: #444; letter-spacing: 2px; }
+    .white { color: #fff; }
+    .cyan-text { color: #00f2ff; }
+
+    .elite-card:hover { transform: translateY(-10px); border-color: #00f2ff44; }
+
+    @media (max-width: 768px) {
+        .main-title { font-size: 1.5rem; }
+        .global-footer { flex-direction: column; gap: 15px; }
+    }
+</style>
+late(-50%, -50%) scale(1); opacity: 0.5; }
         to { transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
     }
 
@@ -200,142 +360,6 @@ while(true){
     @media (max-width: 768px) {
         .animate-text { font-size: 1.5rem; }
         .feature-icons { flex-direction: column; gap: 20px; }
-    }
-</style>
-<section class="elite-trust-section">
-    <div class="cyber-grid"></div>
-    
-    <div class="trust-header">
-        <h2 class="tech-font cyan-text">SYSTEM STATUS: <span class="blink">ONLINE 🟢</span></h2>
-        <p class="tech-font" style="font-size: 0.8rem; letter-spacing: 5px; color: #aaa;">CURRENTLY ARCHITECTING 4 GLOBAL PROJECTS</p>
-    </div>
-
-    <div class="comparison-grid">
-        <div class="trust-card standard">
-            <h3 class="tech-font" style="color: #ff4d4d;">AVERAGE DEVELOPERS</h3>
-            <ul>
-                <li>❌ Bloated Template Code</li>
-                <li>❌ 5s+ Loading Time</li>
-                <li>❌ Generic Security Risks</li>
-                <li>❌ Zero SEO Optimization</li>
-            </ul>
-        </div>
-
-        <div class="trust-card premium">
-            <div class="premium-badge">ELITE STANDARD</div>
-            <h3 class="tech-font cyan-text">AH PREMIUM STUDIO</h3>
-            <ul>
-                <li>⚡ Hand-Crafted Pure Logic</li>
-                <li>🚀 Sub-1s Loading Speed</li>
-                <li>🛡️ Military-Grade Security</li>
-                <li>🔍 Google Rank Optimized</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="location-ticker">
-        <div class="ticker-content tech-font">
-            GLOBAL REACH: USA • UK • UAE • PAKISTAN • GERMANY • CANADA • GLOBAL REACH: USA • UK • UAE • PAKISTAN • GERMANY • CANADA
-        </div>
-    </div>
-</section>
-
-<style>
-    .elite-trust-section {
-        background: #000;
-        padding: 100px 5%;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 2px solid #00f2ff22;
-        text-align: center;
-    }
-
-    .cyber-grid {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: linear-gradient(#00f2ff05 1px, transparent 1px), linear-gradient(90deg, #00f2ff05 1px, transparent 1px);
-        background-size: 30px 30px;
-        z-index: 1;
-    }
-
-    .trust-header { position: relative; z-index: 2; margin-bottom: 60px; }
-    
-    .blink { animation: blinker 1.5s linear infinite; }
-    @keyframes blinker { 50% { opacity: 0; } }
-
-    .comparison-grid {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        position: relative;
-        z-index: 2;
-        flex-wrap: wrap;
-    }
-
-    .trust-card {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid #333;
-        padding: 40px;
-        border-radius: 15px;
-        width: 100%;
-        max-width: 400px;
-        transition: 0.5s;
-    }
-
-    .trust-card.premium {
-        border-color: #00f2ff;
-        background: rgba(0, 242, 255, 0.03);
-        box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
-        position: relative;
-    }
-
-    .premium-badge {
-        position: absolute;
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #00f2ff;
-        color: #000;
-        font-family: 'Orbitron', sans-serif;
-        padding: 5px 15px;
-        font-size: 10px;
-        font-weight: bold;
-        border-radius: 5px;
-    }
-
-    .trust-card h3 { margin-bottom: 25px; font-size: 1.2rem; }
-    .trust-card ul { list-style: none; text-align: left; padding: 0; }
-    .trust-card ul li { margin-bottom: 15px; font-size: 0.9rem; color: #ccc; }
-
-    .location-ticker {
-        margin-top: 80px;
-        white-space: nowrap;
-        overflow: hidden;
-        background: rgba(0, 242, 255, 0.05);
-        padding: 15px 0;
-        border-top: 1px solid #00f2ff22;
-        border-bottom: 1px solid #00f2ff22;
-        z-index: 2;
-        position: relative;
-    }
-
-    .ticker-content {
-        display: inline-block;
-        font-size: 0.8rem;
-        color: #00f2ff;
-        animation: tickerMove 20s linear infinite;
-    }
-
-    @keyframes tickerMove {
-        from { transform: translateX(0); }
-        to { transform: translateX(-50%); }
-    }
-
-    .trust-card:hover { transform: scale(1.05); border-color: #00f2ff; }
-
-    @media (max-width: 768px) {
-        .comparison-grid { flex-direction: column; align-items: center; }
-        .trust-card { width: 90%; }
     }
 </style>
 
