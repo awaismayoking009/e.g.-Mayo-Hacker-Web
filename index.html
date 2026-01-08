@@ -1,150 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AH PREMIUM WEB STUDIO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AH Premium Studio | Elite Digital Agency</title>
 
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
 
-<style>
-/* ================= RESET ================= */
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:'Poppins',sans-serif;
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
-}
+<body>
 
-/* ================= BACKGROUND CODE ================= */
-.code-bg{
-    position:fixed;
-    inset:0;
-    font-family:monospace;
-    opacity:.06;
-    z-index:0;
-    pointer-events:none;
-}
-.code-bg pre{white-space:pre-wrap}
+<!-- ========== MOBILE MENU ========== -->
+<div class="mobile-nav-toggle" id="menuBtn">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
 
-/* ================= LOADER ================= */
-#loader{
-    position:fixed;
-    inset:0;
-    background:#000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    transition:.5s;
-}
-#loader h1{
-    font-family:'Orbitron';
-    text-align:center;
-}
-.hacker-text{
-    margin-top:15px;
-    color:#00f2ff;
-    text-align:center;
-}
+<nav class="side-menu" id="sideMenu">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-/* ================= SIDE MENU ================= */
-.side-menu{
-    position:fixed;
-    top:0;
-    left:-270px;
-    width:270px;
-    height:100%;
-    background:#050505;
-    z-index:1000;
-    transition:.4s;
-    padding-top:90px;
-}
-.side-menu.active{left:0}
-.nav-links{list-style:none}
-.nav-links a{
-    display:block;
-    padding:16px 25px;
-    color:#00f2ff;
-    text-decoration:none;
-    border-bottom:1px solid #111;
-}
+<!-- ========== HERO SECTION ========== -->
+<section class="hero">
+  <div>
+    <h1 class="tech-font cyan-text">AH PREMIUM STUDIO</h1>
+    <p>Enterprise Websites • Hacking UI • High Performance Code</p>
+  </div>
+</section>
 
-/* ================= HEADER ================= */
-header{
-    position:relative;
-    z-index:10;
-    padding:20px 5%;
-}
-.logo-box{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-.header-logo-img{width:50px}
-.logo-icon{
-    font-family:'Orbitron';
-    font-size:34px;
-    color:#00f2ff;
-}
-.logo-text span{
-    display:block;
-    font-size:12px;
-    letter-spacing:1px;
-}
-.mobile-nav-toggle{
-    margin-left:auto;
-    cursor:pointer;
-}
-.mobile-nav-toggle .line{
-    width:26px;
-    height:3px;
-    background:#00f2ff;
-    margin:5px 0;
-}
+<!-- ========== TRUST STRIP ========== -->
+<section class="detail-section">
+  <h2 class="tech-font section-title">TRUSTED BY VISIONARY CLIENTS</h2>
+  <p class="large-text">
+    We design, engineer and secure digital experiences for brands
+    that demand speed, security and cinematic presence.
+  </p>
+</section>
 
-/* ================= HERO ================= */
-.hero-visual{position:relative}
-.hero-visual img{
-    width:100%;
-    height:85vh;
-    object-fit:cover;
-}
-.image-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-.image-overlay h2{
-    letter-spacing:3px;
-    font-size:14px;
-    color:#aaa;
-}
-.image-overlay h1{
-    font-family:'Orbitron';
-    margin-top:15px;
-    font-size:32px;
-}
+<!-- ========== FULL IMAGE BREAK ========== -->
+<section class="full-img-box" style="background-image:url('hero2.jpg')">
+  <div class="img-overlay-text">
+    <h2 class="tech-font cyan-text">ENGINEERED — NOT TEMPLATED</h2>
+  </div>
+</section>
 
-/* ================= COMMON SECTIONS ================= */
-section{
-    padding:90px 5%;
-    position:relative;
-    z-index:2;
-}
+<!-- ========== WHAT WE DO ========== -->
+<section class="detail-section">
+  <h2 class="tech-font section-title">WHAT WE DELIVER</h2>
 
-/* ================= COMPARISON ================= */
-.comparison{background:#000}
-.comp-container{
-    max-width:1100px;
-    margin:auto;
+  <div class="tech-stack">
+    <span class="tech-tag">Custom Hand Coding</span>
+    <span class="tech-tag">Elite WordPress Systems</span>
+    <span class="tech-tag">Hacking Style UI</span>
+    <span class="tech-tag">SEO Optimized</span>
+    <span class="tech-tag">Ultra Fast Speed</span>
+    <span class="tech-tag">Security Hardened</span>
+  </div>
+</section>
+
+<!-- ========== TEAM SECTION ========== -->
+<section class="detail-section" style="background:#000">
+  <h2 class="tech-font section-title">
+    OUR <span class="cyan-text">CORE TEAM</span>
+  </h2>
+
+  <div class="founder-container">
+
+    <!-- OWNER 1 -->
+    <div class="founder-card">
+      <img src="awais.jpg" alt="Awais Mayo">
+      <h3 class="tech-font">AWAIS MAYO</h3>
+      <p class="cyan-text">Founder & Lead Engineer</p>
+      <p>System architect, performance & security specialist.</p>
+    </div>
+
+    <!-- OWNER 2 -->
+    <div class="founder-card">
+      <img src="haseeb.jpg" alt="Haseeb">
+      <h3 class="tech-font">HASEEB</h3>
+      <p class="cyan-text">Co-Founder & Creative Head</p>
+      <p>Visual systems, animations & brand identity.</p>
+    </div>
+
+    <!-- TEAM 3 -->
+    <div class="founder-card">
+      <img src="member1.jpg" alt="Team Member">
+      <h3 class="tech-font">UI ENGINEER</h3>
+      <p class="cyan-text">Frontend Specialist</p>
+      <p>High-end animations & responsive layouts.</p>
+    </div>
+
+    <!-- TEAM 4 -->
+    <div class="founder-card">
+      <img src="member2.jpg" alt="Team Member">
+      <h3 class="tech-font">BACKEND DEV</h3>
+      <p class="cyan-text">Server Architect</p>
+      <p>Logic, databases & performance scaling.</p>
+    </div>
+
+    <!-- TEAM 5 -->
+    <div class="founder-card">
+      <img src="member3.jpg" alt="Team Member">
+      <h3 class="tech-font">SEO EXPERT</h3>
+      <p class="cyan-text">Growth Strategist</p>
+      <p>Google ranking & traffic optimization.</p>
+    </div>
+
+    <!-- TEAM 6 -->
+    <div class="founder-card">
+      <img src="member4.jpg" alt="Team Member">
+      <h3 class="tech-font">SECURITY ANALYST</h3>
+      <p class="cyan-text">Protection Specialist</p>
+      <p>Website hardening & vulnerability defense.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="detail-section">
+  <h2 class="tech-font cyan-text">READY TO DOMINATE ONLINE?</h2>
+  <p class="large-text">
+    Partner with AH Premium Studio and experience
+    a digital presence built to outperform competitors.
+  </p>
+</section>
+
+<!-- ========== MENU SCRIPT ========== -->
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+menuBtn.onclick = () => sideMenu.classList.toggle("active");
+</script>
+
+</body>
+    </html>    margin:auto;
     display:flex;
     align-items:center;
     gap:25px;
