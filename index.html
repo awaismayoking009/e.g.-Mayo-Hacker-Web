@@ -313,58 +313,107 @@ while(true){
         padding: 4px 12px;
         border-radius: 4px;
         font-family: 'Orbitron', sans-serif;
-    }
 
-    .card-desc { color: #666; font-size: 0.85rem; margin: 10px 0 25px 0; }
-
-    .p-item {
-        margin-bottom: 15px;
-        font-size: 0.9rem;
-        color: #ccc;
-        display: flex;
-        gap: 15px;
-    }
-
-    .global-footer {
-        position: relative;
-        z-index: 2;
-        margin-top: 60px;
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        padding-top: 30px;
-        border-top: 1px solid #111;
-    }
-
-    .f-item { font-family: 'Orbitron', sans-serif; font-size: 0.75rem; color: #444; letter-spacing: 2px; }
-    .white { color: #fff; }
-    .cyan-text { color: #00f2ff; }
-
-    .elite-card:hover { transform: translateY(-10px); border-color: #00f2ff44; }
-
-    @media (max-width: 768px) {
-        .main-title { font-size: 1.5rem; }
-        .global-footer { flex-direction: column; gap: 15px; }
-    }
-</style>
-late(-50%, -50%) scale(1); opacity: 0.5; }
-        to { transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
-    }
-
-    @keyframes floatIcon {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-        .animate-text { font-size: 1.5rem; }
-        .feature-icons { flex-direction: column; gap: 20px; }
-    }
-</style>
 
 <section class="comparison">
-    <div class="comp-container">
+    <div class="comp-contain<section class="cyber-trust-fixed">
+    <div class="cyber-grid-overlay"></div>
+    <div class="content-wrapper">
+        <div class="status-indicator">
+            <span class="ping-circle"></span>
+            <span class="tech-font status-msg">CORE_SYSTEMS: <span class="cyan">ACTIVE</span></span>
+        </div>
+        <h2 class="tech-font head-title">WHY ELITE BRANDS CHOOSE <span class="cyan">AH STUDIO</span></h2>
+        
+        <div class="cards-layout">
+            <div class="trust-card-new red-line">
+                <h3 class="tech-font">CONVENTIONAL WEB</h3>
+                <p class="desc-text">Common market flaws we eliminate:</p>
+                <div class="point-list">
+                    <div class="p-row"><span>✕</span> Slow & Heavy Templates</div>
+                    <div class="p-row"><span>✕</span> Security Vulnerabilities</div>
+                    <div class="p-row"><span>✕</span> Poor SEO & Zero Logic</div>
+                </div>
+            </div>
+
+            <div class="trust-card-new cyan-line">
+                <div class="floating-tag">PREMIUM</div>
+                <h3 class="tech-font cyan">AH PREMIUM LOGIC</h3>
+                <p class="desc-text">Our engineering excellence:</p>
+                <div class="point-list">
+                    <div class="p-row cyan"><span>✓</span> Hand-Written Clean Code</div>
+                    <div class="p-row cyan"><span>✓</span> Military-Grade Security</div>
+                    <div class="p-row cyan"><span>✓</span> Elite Google Optimization</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trust-bar-bottom">
+            <div class="bar-item">NETWORK: <span>GLOBAL</span></div>
+            <div class="bar-item">UPTIME: <span>99.9%</span></div>
+            <div class="bar-item">ENCRYPTION: <span>AES-256</span></div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* 🛠️ ULTIMATE FIX FOR OVERLAPPING ISSUES */
+    .cyber-trust-fixed {
+        background: #000 !important;
+        padding: 80px 5% !important;
+        position: relative !important;
+        display: block !important;
+        clear: both !important;
+        border-top: 1px solid #111;
+        overflow: hidden;
+    }
+    .cyber-grid-overlay {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background-image: linear-gradient(rgba(0, 242, 255, 0.02) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(0, 242, 255, 0.02) 1px, transparent 1px);
+        background-size: 40px 40px; z-index: 1;
+    }
+    .content-wrapper { position: relative; z-index: 5; text-align: center; max-width: 1200px; margin: 0 auto; }
+    .status-indicator {
+        display: inline-flex; align-items: center; gap: 10px;
+        background: rgba(255,255,255,0.03); padding: 8px 20px;
+        border-radius: 50px; border: 1px solid #222; margin-bottom: 30px;
+    }
+    .ping-circle {
+        height: 10px; width: 10px; background: #00f2ff;
+        border-radius: 50%; box-shadow: 0 0 10px #00f2ff;
+        animation: simplePulse 2s infinite;
+    }
+    @keyframes simplePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .head-title { font-size: 1.8rem; color: #fff; margin-bottom: 40px; letter-spacing: 2px; line-height: 1.4; }
+    .cards-layout { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+    .trust-card-new {
+        background: #080808; border: 1px solid #151515;
+        padding: 40px 30px; border-radius: 15px;
+        width: 100%; max-width: 440px; text-align: left; position: relative;
+    }
+    .red-line { border-bottom: 4px solid #ff4d4d; }
+    .cyan-line { border-bottom: 4px solid #00f2ff; box-shadow: 0 10px 40px rgba(0,242,255,0.05); }
+    .floating-tag {
+        position: absolute; top: 15px; right: 20px; font-size: 9px;
+        background: #00f2ff; color: #000; padding: 3px 10px; border-radius: 3px; font-weight: bold;
+    }
+    .desc-text { color: #555; font-size: 0.85rem; margin-bottom: 25px; }
+    .point-list { display: flex; flex-direction: column; gap: 15px; }
+    .p-row { display: flex; gap: 12px; font-size: 0.9rem; color: #aaa; }
+    .trust-bar-bottom {
+        margin-top: 60px; display: flex; justify-content: center;
+        gap: 40px; border-top: 1px solid #111; padding-top: 30px;
+    }
+    .bar-item { font-family: 'Orbitron', sans-serif; font-size: 0.7rem; color: #444; }
+    .bar-item span { color: #fff; margin-left: 5px; }
+    .cyan { color: #00f2ff; }
+    @media (max-width: 768px) {
+        .head-title { font-size: 1.4rem; }
+        .trust-bar-bottom { flex-direction: column; gap: 15px; }
+    }
+</style>
+er">
         <div class="comp-box">
             <div class="img-row">
                 <img src="Wordpress 1.jpg" alt="WP1">
