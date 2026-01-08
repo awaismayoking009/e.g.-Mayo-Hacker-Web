@@ -1,174 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AH PREMIUM WEB STUDIO</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AH PREMIUM WEB STUDIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* BASE STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        .tech-font { font-family: 'Orbitron', sans-serif; }
+        .cyan { color: #00f2ff; }
+
+        /* LOADER */
+        #loader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 10000; display: flex;
+            justify-content: center; align-items: center; text-align: center;
+        }
+        .welcome-msg { font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 10px; }
+        .welcome-msg span { color: #00f2ff; }
+        .hacker-text { color: #00f2ff; font-family: 'Orbitron'; font-size: 0.8rem; }
+
+        /* BACKGROUND CODE */
+        .code-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.05; pointer-events: none; z-index: -1; color: #00f2ff; font-size: 10px;
+        }
+
+        /* HEADER & NAV */
+        header { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); padding: 15px 5%; border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-box { display: flex; align-items: center; gap: 15px; }
+        .header-logo-img { width: 50px; border-radius: 50%; border: 2px solid #00f2ff; }
+        .logo-text span { display: block; line-height: 1; }
+        .web { font-family: 'Orbitron'; font-weight: 900; color: #fff; }
+        .dev { color: #00f2ff; font-size: 10px; letter-spacing: 2px; }
+
+        /* HERO SECTION */
+        .hero-visual { position: relative; height: 70vh; overflow: hidden; }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
+        .image-overlay { position: absolute; top: 50%; left: 5%; transform: translateY(-50%); }
+        .image-overlay h1 { font-family: 'Orbitron'; font-size: 3rem; margin-top: 10px; line-height: 1.2; }
+
+        /* 1. HOSTING SECTION */
+        .hosting-offer-container {
+            background: #000; padding: 80px 5%; position: relative; border-top: 1px solid #00f2ff22; text-align: center;
+        }
+        .tech-badge { background: #00f2ff; color: #000; padding: 5px 20px; font-family: 'Orbitron'; font-weight: bold; border-radius: 50px; display: inline-block; margin-bottom: 20px; box-shadow: 0 0 15px #00f2ff; }
+        .animate-text { font-family: 'Orbitron'; font-size: 2.2rem; color: #fff; margin-bottom: 15px; }
+        .feature-icons { display: flex; justify-content: center; gap: 30px; margin-top: 40px; }
+        .icon-box { display: flex; flex-direction: column; gap: 5px; font-family: 'Orbitron'; font-size: 0.7rem; color: #00f2ff; }
+
+        /* 2. ELITE CYBER TRUST (NEW DESIGN) */
+        .cyber-trust-final {
+            background: #000; padding: 100px 5%; position: relative; overflow: hidden; border-top: 1px solid #111; clear: both;
+        }
+        .cyber-grid-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 242, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px; z-index: 1;
+        }
+        .content-wrapper { position: relative; z-index: 5; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .status-indicator { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.03); padding: 8px 20px; border-radius: 50px; border: 1px solid #222; margin-bottom: 30px; }
+        .ping-circle { height: 10px; width: 10px; background: #00f2ff; border-radius: 50%; box-shadow: 0 0 10px #00f2ff; animation: pulse 2s infinite; }
+        .head-title { font-size: 2rem; color: #fff; margin-bottom: 50px; font-family: 'Orbitron'; }
+        .cards-layout { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .trust-card-new { background: #080808; border: 1px solid #151515; padding: 40px 30px; border-radius: 15px; width: 100%; max-width: 440px; text-align: left; position: relative; }
+        .red-line { border-bottom: 4px solid #ff4d4d; }
+        .cyan-line { border-bottom: 4px solid #00f2ff; box-shadow: 0 10px 40px rgba(0,242,255,0.05); }
+        .floating-tag { position: absolute; top: 15px; right: 20px; font-size: 9px; background: #00f2ff; color: #000; padding: 3px 10px; font-weight: bold; border-radius: 3px; }
+        .p-row { display: flex; gap: 12px; margin-top: 15px; font-size: 0.9rem; color: #aaa; }
+        .trust-bar-bottom { margin-top: 60px; display: flex; justify-content: center; gap: 40px; border-top: 1px solid #111; padding-top: 30px; font-family: 'Orbitron'; font-size: 0.7rem; color: #444; }
+        .trust-bar-bottom span { color: #fff; margin-left: 5px; }
+
+        /* 3. WORDPRESS VS CODING */
+        .comparison { background: #000; padding: 80px 5%; border-top: 1px solid #111; clear: both; }
+        .comp-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .comp-box { flex: 1; background: rgba(255,255,255,0.03); padding: 40px 25px; border-radius: 20px; border: 1px solid #222; text-align: center; transition: 0.4s; }
+        .comp-box:hover { border-color: #00f2ff; transform: translateY(-5px); }
+        .img-row { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; }
+        .img-row img { width: 80px; height: 80px; object-fit: contain; }
+        .comp-box h3 { color: #00f2ff; font-family: 'Orbitron'; margin-bottom: 15px; }
+        .vs { font-family: 'Orbitron'; font-size: 2rem; color: #444; font-weight: bold; }
+
+        /* 4. TEAM SECTION */
+        .team-section { padding: 80px 5%; background: #000; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .team-card { text-align: center; padding: 20px; border: 1px solid #111; border-radius: 15px; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 2px solid #00f2ff; }
+
+        /* ANALYTICS TABLE */
+        .trust-table { padding: 80px 5%; }
+        .rating-grid { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        .rating-grid th, .rating-grid td { padding: 15px; border-bottom: 1px solid #111; text-align: left; }
+        .bar { background: #111; height: 8px; border-radius: 10px; width: 150px; }
+        .fill { background: #00f2ff; height: 100%; border-radius: 10px; }
+
+        /* SIDE MENU */
+        .side-menu { position: fixed; right: -300px; top: 0; width: 300px; height: 100%; background: #000; z-index: 2000; transition: 0.5s; padding: 50px 30px; border-left: 1px solid #222; }
+        .side-menu.active { right: 0; }
+        .nav-links li { list-style: none; margin-bottom: 25px; }
+        .nav-links a { color: #fff; text-decoration: none; font-family: 'Orbitron'; font-size: 1.2rem; }
+        .mobile-nav-toggle { cursor: pointer; display: flex; flex-direction: column; gap: 5px; }
+        .line { width: 25px; height: 2px; background: #fff; }
+
+        /* ANIMATIONS */
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        @media (max-width: 768px) {
+            .comp-container { flex-direction: column; }
+            .animate-text { font-size: 1.5rem; }
+            .head-title { font-size: 1.4rem; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- BACKGROUND AUTO CODING -->
-<div class="code-bg">
-<pre><code>
-const studio = "AH WEB STUDIO";
-function hackFuture(){
-    return "Clean Code • Modern Design • Secure";
-}
-while(true){
-    hackFuture();
-}
-</code></pre>
-</div>
-
-<!-- LOADER / HACKING TYPE ANIMATION -->
-<div id="loader">
-  <div class="loader-content">
-    <h1 class="welcome-msg">
-      WELCOME TO <br><span>AH WEB STUDIO</span>
-    </h1>
-    <div class="hacker-text">Loading… Please wait</div>
-  </div>
-</div>
-<nav class="side-menu" id="sideMenu">
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-    
-<header>
-    <div class="nav-container">
-        <div class="logo-box">
-    <img src="awais1.png" alt="AH Logo" class="header-logo-img">
-
-<div class="mobile-nav-toggle" id="menuBtn">
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-</div>
-            
-    <div class="logo-icon">AH</div>
-    
-    <div class="logo-text">
-        <span class="web">WEB</span>
-        <span class="dev">Development</span>
-        <span class="studio">Studio</span>
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="welcome-msg">WELCOME TO <br><span>AH WEB STUDIO</span></h1>
+            <div class="hacker-text">LOADING SYSTEM 0%</div>
+        </div>
     </div>
-</div>
 
+    <div class="code-bg"><pre><code>const studio = "AH WEB STUDIO"; while(true){ hackFuture(); }</code></pre></div>
+
+    <nav class="side-menu" id="sideMenu">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        
+    <header>
+        <div class="nav-container">
+            <div class="logo-box">
+                <img src="awais1.png" alt="AH Logo" class="header-logo-img">
+                <div class="logo-text">
+                    <span class="web">AH WEB</span>
+                    <span class="dev">Development Studio</span>
+                </div>
+            </div>
+            <div class="mobile-nav-toggle" id="menuBtn">
+                <span class="line"></span><span class="line"></span><span class="line"></span>
             </div>
         </div>
-        <div class="nav-right">
-            <div class="search-box"><input type="text" placeholder="Search technology..."><span>🔍</span></div>
-            <div class="menu-btn"><span></span><span></span><span></span></div>
-        </div>
-    </div>
-</header>
+    </header>
 
-<section class="hero-visual">
-    <div class="image-wrapper">
-        <img src="Coding 1.jpg" alt="Main Laptop Visual">
-        <div class="image-overlay">
-            <h2>INNOVATION & EXCELLENCE</h2>
-            <h1>SIMPLICITY IS THE ULTIMATE SOPHISTICATION</h1>
+    <section class="hero-visual">
+        <div class="image-wrapper">
+            <img src="Coding 1.jpg" alt="Main Laptop Visual">
+            <div class="image-overlay">
+                <h2 class="tech-font">INNOVATION & EXCELLENCE</h2>
+                <h1>SIMPLICITY IS THE <br><span class="cyan">ULTIMATE SOPHISTICATION</span></h1>
+            </div>
         </div>
-    </div>
-</section>
-<section class="hosting-offer-container">
-    <div class="glow-overlay"></div>
-    <div class="moving-text-wrapper">
+    </section>
+
+    <section class="hosting-offer-container">
         <div class="tech-badge">ELITE DEAL</div>
-        <h2 class="animate-text">
-            WE PROVIDE <span class="cyan-glow">FREE PREMIUM HOSTING</span> FOR YOUR PROJECT
-        </h2>
-        <p class="moving-subtext">
-            Just Bring Your <span class="white-box">DOMAIN</span> — We Handle The Power & Speed!
-        </p>
-        
+        <h2 class="animate-text">WE PROVIDE <span class="cyan">FREE PREMIUM HOSTING</span> FOR YOUR PROJECT</h2>
+        <p>Just Bring Your <span style="background: #fff; color: #000; padding: 2px 8px; font-weight: bold;">DOMAIN</span> — We Handle The Rest!</p>
         <div class="feature-icons">
             <div class="icon-box">🚀 <span>Ultra Fast</span></div>
             <div class="icon-box">🛡️ <span>Max Security</span></div>
             <div class="icon-box">⚡ <span>99.9% Uptime</span></div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    .hosting-offer-container {
-        position: relative;
-        background: #000;
-        padding: 80px 5%;
-        overflow: hidden;
-        border-top: 1px solid #00f2ff44;
-        border-bottom: 1px solid #00f2ff44;
-        text-align: center;
-    }
+    <section class="cyber-trust-final">
+        <div class="cyber-grid-overlay"></div>
+        <div class="content-wrapper">
+            <div class="status-indicator">
+                <span class="ping-circle"></span>
+                <span class="tech-font status-msg">CORE_SYSTEMS: <span class="cyan">ACTIVE</span></span>
+            </div>
+            <h2 class="head-title">WHY ELITE BRANDS CHOOSE <span class="cyan">AH STUDIO</span></h2>
+            <div class="cards-layout">
+                <div class="trust-card-new red-line">
+                    <h3 class="tech-font">CONVENTIONAL WEB</h3>
+                    <p style="color: #555; font-size: 0.8rem; margin: 10px 0;">Standard market flaws we eliminate:</p>
+                    <div class="p-row"><span>✕</span> Slow & Heavy Templates</div>
+                    <div class="p-row"><span>✕</span> Security Vulnerabilities</div>
+                    <div class="p-row"><span>✕</span> Poor SEO & Zero Logic</div>
+                </div>
+                <div class="trust-card-new cyan-line">
+                    <div class="floating-tag">PREMIUM</div>
+                    <h3 class="tech-font cyan">AH PREMIUM LOGIC</h3>
+                    <p style="color: #555; font-size: 0.8rem; margin: 10px 0;">Our engineering excellence:</p>
+                    <div class="p-row cyan"><span>✓</span> Hand-Written Clean Code</div>
+                    <div class="p-row cyan"><span>✓</span> Military-Grade Security</div>
+                    <div class="p-row cyan"><span>✓</span> Elite Google Optimization</div>
+                </div>
+            </div>
+            <div class="trust-bar-bottom">
+                <div>NETWORK: <span>GLOBAL</span></div>
+                <div>UPTIME: <span>99.9%</span></div>
+                <div>ENCRYPTION: <span>AES-256</span></div>
+            </div>
+        </div>
+    </section>
 
-    .glow-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 300px;
-        height: 300px;
-        background: radial-gradient(circle, rgba(0, 242, 255, 0.2) 0%, transparent 70%);
-        transform: translate(-50%, -50%);
-        animation: pulseGlow 4s infinite alternate;
-    }
+    <section class="comparison">
+        <div class="comp-container">
+            <div class="comp-box">
+                <div class="img-row">
+                    <img src="wordpress 1.jpg" alt="WP1"><img src="wordpress 2.png" alt="WP2">
+                </div>
+                <h3>WORDPRESS SOLUTIONS</h3>
+                <p>Flexible, fast-to-deploy, and highly customizable CMS for dynamic business needs.</p>
+            </div>
+            <div class="vs">VS</div>
+            <div class="comp-box">
+                <div class="img-row">
+                    <img src="Coding 1.jpg" alt="Code1"><img src="Coding 2.png" alt="Code2">
+                </div>
+                <h3>CUSTOM CODING</h3>
+                <p>High-performance, secure, and fully scalable hand-crafted code for elite digital security.</p>
+            </div>
+        </div>
+    </section>
 
-    .tech-badge {
-        display: inline-block;
-        background: #00f2ff;
-        color: #000;
-        padding: 5px 20px;
-        font-family: 'Orbitron', sans-serif;
-        font-weight: bold;
-        font-size: 12px;
-        border-radius: 50px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px #00f2ff;
-    }
+    <section class="team-section">
+        <h2 class="tech-font" style="text-align: center; margin-bottom: 40px;">OUR OFFICIAL REPRESENTATIVES</h2>
+        <div class="team-grid">
+            <div class="team-card"><img src="awais.jpg" class="profile-img"><h3>Awais Mayo</h3><span>Founder & CEO</span></div>
+            <div class="team-card"><img src="mahnoor.jpg" class="profile-img"><h3>Mahnoor Awais</h3><span>Co-Founder</span></div>
+            <div class="team-card"><img src="haseeb.jpg" class="profile-img"><h3>Haseeb Ahmad</h3><span>CTO</span></div>
+            <div class="team-card"><img src="azqa.jpg" class="profile-img"><h3>Azqa Haseeb</h3><span>UI/UX Head</span></div>
+        </div>
+    </section>
 
-    .animate-text {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 2.5rem;
-        color: #fff;
-        margin-bottom: 15px;
-        letter-spacing: 2px;
-    }
+    <section class="trust-table">
+        <h2 class="tech-font">PERFORMANCE ANALYTICS</h2>
+        <table class="rating-grid">
+            <tr><th>Metric</th><th>Analytics</th><th>Rating</th></tr>
+            <tr><td>Coding Efficiency</td><td><div class="bar"><div class="fill" style="width: 95%;"></div></div></td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>Data Security</td><td><div class="bar"><div class="fill" style="width: 99%;"></div></div></td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td>SEO Success</td><td><div class="bar"><div class="fill" style="width: 92%;"></div></div></td><td>⭐⭐⭐⭐⭐</td></tr>
+        </table>
+    </section>
 
-    .cyan-glow {
-        color: #00f2ff;
-        text-shadow: 0 0 20px #00f2ff;
-    }
+    <section class="cta" style="text-align: center; padding: 60px 0; border-top: 1px solid #111;">
+        <h2 class="tech-font">READY TO BUILD YOUR WEBSITE?</h2><br>
+        <a href="https://wa.me/923295533214" target="_blank" style="background: #00f2ff; color: #000; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px;">Contact on WhatsApp</a>
+    </section>
 
-    .moving-subtext {
-        font-size: 1.2rem;
-        color: #aaa;
-        font-style: italic;
-    }
+    <script>
+        // Loader Logic
+        const loader = document.getElementById("loader");
+        const loaderText = document.querySelector(".hacker-text");
+        let percent = 0;
+        let interval = setInterval(() => {
+            percent += 10;
+            if (percent <= 100) { loaderText.innerText = "LOADING SYSTEM " + percent + "%"; } 
+            else { clearInterval(interval); loader.style.opacity = "0"; setTimeout(() => { loader.style.display = "none"; }, 500); }
+        }, 50);
 
-    .white-box {
-        background: #fff;
-        color: #000;
-        padding: 2px 10px;
-        font-weight: bold;
-        border-radius: 3px;
-    }
-
-    /* Floating Feature Icons */
-    .feature-icons {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 40px;
-    }
-
-    .icon-box {
+        // Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        menuBtn.onclick = () => sideMenu.classList.toggle('active');
+    </script>
+</body>
+</html>
         display: flex;
         flex-direction: column;
         align-items: center;
